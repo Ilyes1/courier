@@ -5477,7 +5477,7 @@ blockquote span {
 
 /*** 29.0 - Footer Section ***/
 .footer-wrapper {
-    background-color: var(--bg-dark);
+    background-color: #3f537c;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -5533,7 +5533,7 @@ blockquote span {
     height: 40px;
     line-height: 40px;
     display: inline-block;
-    background-color: var(--bg-dark-light);
+    background-color: #546b9b;
     color: var(--white-color);
     border-radius: 50%;
     text-align: center;
@@ -5551,7 +5551,7 @@ blockquote span {
 }
 
 .footer-widget {
-    color: var(--grey-light-color);
+    color: var(--white-color);
 }
 
 .footer-widget .widget-title {
@@ -5573,15 +5573,15 @@ blockquote span {
 
 .footer-widget li a {
     display: inline-block;
-    color: var(--grey-light-color);
+    color: var(--white-color);
 }
 
 .footer-widget li a:hover {
-    color: var(--primary-color);
+    color: lightgray;
 }
 
 .footer-widget .contact-btn {
-    background-color: var(--bg-dark-light);
+    background-color: #546b9b;
     display: block;
     color: var(--grey-light-color);
     width: 120px;
@@ -5597,7 +5597,7 @@ blockquote span {
 }
 
 .footer-bottom {
-    background-color: var(--bg-dark-light);
+    background-color: #546b9b;
     padding: 30px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
@@ -5612,7 +5612,7 @@ blockquote span {
 .copyright-text,
 .copyright-text a,
 .footer-bottom ul li a {
-    color: var(--grey-color);
+    color: var(--white-color);
 }
 
 .copyright-text a:hover,
