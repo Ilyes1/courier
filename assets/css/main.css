@@ -1135,6 +1135,7 @@ body.loaded {
     }
     .mobile-logo-container {
         display: block !important;
+        margin-bottom: 40px !important;
     }
     .burger-menu {
         width: 20px;
@@ -1216,7 +1217,7 @@ body.loaded {
         top: 0;
         width: 400px;
         height: 100vh;
-        padding: 100px 0 40px;
+        padding: 40px 0 40px;
         box-shadow: var(--shadow-sm);
         display: block;
         visibility: hidden;
@@ -2447,7 +2448,7 @@ body.loaded {
 
 /* Service 2 */
 .service-card {
-    background-color: var(--bg-dark-light);
+    background-color: #546b9b;
     border-radius: 5px;
     padding: 32px;
     box-sizing: border-box;
@@ -2457,18 +2458,19 @@ body.loaded {
     display: flex;
     flex-direction: column;
     height: 100%;
+    border-radius: 20px;
 }
 
 .service-card:before {
-    background: radial-gradient(circle at 100% 100%, #212140 0, #212140 3px, transparent 3px) 0% 0%/5px 5px no-repeat,
-        radial-gradient(circle at 0 100%, #212140 0, #212140 3px, transparent 3px) 100% 0%/5px 5px no-repeat,
+    /* background: radial-gradient(circle at 100% 100%, #212140 0, #212140 3px, transparent 3px) 0% 0%/5px 5px no-repeat,
+    radial-gradient(circle at 0 100%, #212140 0, #212140 3px, transparent 3px) 100% 0%/5px 5px no-repeat,
         radial-gradient(circle at 100% 0, #212140 0, #212140 3px, transparent 3px) 0% 100%/5px 5px no-repeat,
         radial-gradient(circle at 0 0, #212140 0, #212140 3px, transparent 3px) 100% 100%/5px 5px no-repeat,
         linear-gradient(#212140, #212140) 50% 50%/calc(100% - 4px) calc(100% - 10px) no-repeat,
         linear-gradient(#212140, #212140) 50% 50%/calc(100% - 10px) calc(100% - 4px) no-repeat,
         linear-gradient(90deg, transparent 0%, #8cadaf 0%, #ff6a32 100%),
-        linear-gradient(220deg, #ff6a32 100%, transparent 100%, #383ad0 100%);
-
+        linear-gradient(220deg, #ff6a32 100%, transparent 100%, #383ad0 100%); */
+    background-color: #212140;
     transition: all 0.2s ease-in-out;
     content: "";
     width: 100%;
@@ -2501,7 +2503,7 @@ body.loaded {
 }
 
 .service-card .service-head .service-icon {
-    background-color: var(--bg-dark);
+    background-color: #546b9b;
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -2511,6 +2513,10 @@ body.loaded {
     justify-content: center;
     flex: 0 0 auto;
     font-size: 35px;
+}
+
+.service-card .service-head .service-icon img {
+    filter: brightness(0) invert(1);
 }
 
 .service-card .service-content {
@@ -2536,7 +2542,7 @@ body.loaded {
 }
 
 .service-card .service-content .read-more span {
-    color: var(--primary-color);
+    color: #ddd;
     font-size: 25px;
     line-height: 1;
     position: relative;
@@ -2544,7 +2550,7 @@ body.loaded {
 }
 
 .service-card .service-content .read-more span:before {
-    background-color: var(--bg-primary-transparent);
+    background-color: #999;
     content: "";
     width: 25px;
     height: 25px;
