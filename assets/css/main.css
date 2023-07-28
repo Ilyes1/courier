@@ -5429,7 +5429,7 @@ blockquote span {
 
 .contact-form .form-field .form-control {
     background-color: #fff;
-    border: 2px solid #ccc;
+    border: 3px solid #ccc;
     height: 50px;
     border-radius: 2px;
     box-shadow: none;
@@ -5438,7 +5438,7 @@ blockquote span {
 
 .contact-form .form-select {
     background-color: #fff;
-    border: 2px solid #ccc;
+    border: 3px solid #ccc;
     height: 50px;
     border-radius: 2px;
     box-shadow: none;
