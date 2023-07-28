@@ -5584,7 +5584,7 @@ blockquote span {
 .footer-widget .contact-btn {
     background-color: #546b9b;
     display: block;
-    color: var(--grey-light-color);
+    color: var(--white-color);
     width: 120px;
     height: 120px;
     line-height: 120px;
