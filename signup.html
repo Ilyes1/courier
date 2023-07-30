@@ -12,6 +12,7 @@
 
     <title>Hire Ready Now</title>
 
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png"> -->
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/animate.min.css">
@@ -86,109 +87,57 @@
     </header>
     <!--/.main-header-->
 
-    <div id="popup-search-box">
-        <div class="box-inner-wrap d-flex align-items-center">
-            <form id="form" action="#" method="get" role="search">
-                <input id="popup-search" type="text" name="s" placeholder="Type keywords here...">
-                <button id="popup-search-button" type="submit" name="submit">
-                    <i class="las la-search"></i>
-                </button>
-            </form>
-            <div class="search-close"><i class="las la-times"></i></div>
-        </div>
-    </div>
-    <!--/.popupsearch-box-->
-    <div id="searchbox-overlay"></div>
+    
 
-    <section class="page-header">
-        <div class="page-header-shape"></div>
-        <div class="container">
-            <div class="page-header-info">
-                <h4>Latest Articles</h4>
-                <h2>Get the updated news <br>from our <span>blog!</span></h2>
-                <p>Everything your digital consulting business <br>needs is already here! </p>
-            </div>
-        </div>
-    </section>
-    <!--/.page-header-->
+    
 
-    <section class="blog-section blog-page bg-grey padding">
+
+
+    <section class="contact-section bd-bottom padding">
+        <!-- <div class="map-pattern"></div> -->
         <div class="container">
             <div class="row">
-                <div class="col-12 sm-padding">
-                    <div class="row grid-post">
-                        <div class="col-md-4 padding-15">
-                            <div class="post-card">
-                                <div class="post-thumb">
-                                    <img src="assets/img/post-1.jpg" alt="post">
-                                </div>
-                                <div class="post-content-wrap">
-                                    <ul class="post-meta">
-                                        <li><i class="las la-calendar"></i>Jan 01 2022</li>
-                                    </ul>
-                                    <div class="post-content">
-                                        <h3>
-                                            <a href="#" class="hover">Start initiating find an startup in days.</a>
-                                        </h3>
-                                        <p>Financial experts support or help you to to find out which way you can raise your
-                                            funds more...</p>
-                                        <a href="#" class="read-more">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="col-md-10 m-auto">
+                    <div class="contact-details-wrap">
+                        <div class="section-heading text-center mb-30">
+                            <h4 class="sub-heading">Sign up</h4>
+                            <h2>Get Started</h2>
                         </div>
-                        <div class="col-md-4 padding-15">
-                            <div class="post-card">
-                                <div class="post-thumb">
-                                    <img src="assets/img/post-2.jpg" alt="post">
-                                </div>
-                                <div class="post-content-wrap">
-                                    <ul class="post-meta">
-                                        <li><i class="las la-calendar"></i>Jan 01 2022</li>
-                                    </ul>
-                                    <div class="post-content">
-                                        <h3>
-                                            <a href="#">Financial experts are support find out.</a>
-                                        </h3>
-                                        <p>Financial experts support or help you to to find out which way you can raise your
-                                            funds more...</p>
-                                        <a href="#" class="read-more">Read More</a>
+                        <div class="contact-form">
+                            <form id="ajax_contact" class="form-horizontal">
+                                <div class="contact-form-group">
+                                    <div class="form-field">
+                                        <input type="text" class="form-control" placeholder="Name" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <input type="text" class="form-control" placeholder="Company Name" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <input type="text" class="form-control" placeholder="Email Address" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <input type="text" class="form-control" placeholder="Phone Number" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <input type="password" class="form-control" placeholder="Password" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <input type="password" class="form-control" placeholder="Confirm Password" required>
+                                    </div>
+                                    <div class="form-field submit-btn">
+                                        <button id="submit" class="default-btn" type="submit">Sign up</button>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 padding-15">
-                            <div class="post-card">
-                                <div class="post-thumb">
-                                    <img src="assets/img/post-3.jpg" alt="post">
-                                </div>
-                                <div class="post-content-wrap">
-                                    <ul class="post-meta">
-                                        <li><i class="las la-calendar"></i>Jan 01 2022</li>
-                                    </ul>
-                                    <div class="post-content">
-                                        <h3><a href="#">Innovative business all over the world.</a></h3>
-                                        <p>Financial experts support or help you to to find out which way you can raise your funds more...</p>
-                                        <a href="#" class="read-more">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
+                                <div id="form-messages" class="alert" role="alert"></div>
+                            </form>
                         </div>
                     </div>
-                    <ul class="pagination-wrap text-left mt-30">
-                        <li><a href="#"><i class="las la-arrow-left"></i></a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#" class="active">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#"><i class="las la-arrow-right"></i></a></li>
-                    </ul>
-                    <!--Pagination-->
                 </div>
-                <!--Blog Grid-->
+               
             </div>
         </div>
     </section>
-    <!--Blog Section-->
+    <!--/.contact-section-->
 
     <footer class="footer-wrapper">
         <div class="map-pattern light"></div>
@@ -231,13 +180,14 @@
                     &copy; <span id="currentYear"></span> Hire Ready Now, All Rights Reserved.
                 </div>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Signup</a></li>
+                    <li><a href="#">Become a Courier</a></li>
+                    <li><a href="#">Customer Login</a></li>
                 </ul>
             </div><!-- /.footer-bottom -->
         </div><!-- /.container -->
     </footer><!-- /.footer-wrapper -->
-
+    
     <div id="scrollup">
         <button id="scroll-top" class="scroll-to-top">
             <i class="las la-arrow-up"></i>

@@ -454,6 +454,20 @@ body.loaded {
     margin-bottom: 10px;
 }
 
+@media (max-width: 991px) {
+    .header-login {
+        display: flex !important;
+        align-items: center;
+        justify-content: flex-start !important;
+    }
+    .header-login a {
+        width: fit-content !important;
+        flex: none !important;
+        color: #546b9b !important;
+        font-family: var(--secondary-font) !important;
+    }
+}
+
 /* Map Pattern */
 .map-pattern {
     background-image: url(../img/map-pattern.png);
@@ -1283,7 +1297,7 @@ body.loaded {
         padding: 10px 40px;
         font-family: var(--primary-font);
         color: var(--dark-color);
-        font-size: 15px;
+        font-size: 20px;
         line-height: 22px;
         font-weight: 700;
     }
@@ -3848,9 +3862,15 @@ body.loaded {
 /*** 19.0 - Why Choose Us ***/
 .feature-lists {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 15px;
     grid-row-gap: 15px;
+}
+
+@media (max-width: 500px) {
+    .feature-lists {
+        grid-template-columns: 1fr;
+    }
 }
 
 .feature-lists .feature-item .feature-icon {
@@ -5580,6 +5600,7 @@ blockquote span {
 .footer-widget li a {
     display: inline-block;
     color: var(--white-color);
+    font-size: 1.3rem;
 }
 
 .footer-widget li a:hover {
@@ -5636,7 +5657,7 @@ blockquote span {
 }
 
 .footer-bottom ul li:not(:last-of-type):after {
-    color: var(--grey-color);
+    color: var(--white-color);
     position: relative;
     content: "/";
     font-size: 16px;
@@ -5646,6 +5667,12 @@ blockquote span {
 .bg-blue {
     /* background-color: #59b4df; */
     background-color: #446189;
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #89CFF0 0%, #666666 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
 }
 
 /* Scrool Up */
