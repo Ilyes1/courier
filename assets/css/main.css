@@ -2375,8 +2375,9 @@ body.loaded {
     background-image: url(../img/polygon-corner-shape.png);
     background-repeat: no-repeat;
     background-position: top right;
-    width: 115px;
-    height: 90px;
+    background-size: 100%;
+    width: 50%;
+    height: 50%;
     content: "";
     position: absolute;
     right: 0;
@@ -5604,7 +5605,6 @@ blockquote span {
 .footer-widget li a {
     display: inline-block;
     color: var(--white-color);
-    font-size: 1.3rem;
 }
 
 .footer-widget li a:hover {
