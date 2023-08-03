@@ -5648,7 +5648,7 @@ blockquote span {
 
 .copyright-text a:hover,
 .footer-bottom ul li a:hover {
-    color: var(--primary-color);
+    color: lightgray;
 }
 
 .footer-bottom ul li {
@@ -5675,6 +5675,11 @@ blockquote span {
 
 .text-gradient {
     background: linear-gradient(to right, #89CFF0 0%, #666666 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+.text-gradient.light {
+    background: linear-gradient(to right, #89CFF0 0%, #ececec 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
 }
