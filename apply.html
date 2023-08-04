@@ -108,31 +108,55 @@
                             <form id="ajax_contact" class="form-horizontal">
                                 <div class="contact-form-group">
                                     <div class="form-field">
-                                        <label>First Name</label>
-                                        <input type="text" class="form-control" placeholder="First Name" required>
+                                        <label>Name</label>
+                                        <input type="text" class="form-control" placeholder="Name" required>
                                     </div>
                                     <div class="form-field">
-                                        <label>Last Name</label>
-                                        <input type="text" class="form-control" placeholder="Last Name" required>
-                                    </div>
-                                    <div class="form-field">
-                                        <label>Email Address</label>
-                                        <input type="text" class="form-control" placeholder="Email Address" required>
-                                    </div>
-                                    <div class="form-field">
-                                        <label>Phone Number</label>
-                                        <input type="text" class="form-control" placeholder="Phone Number" required>
-                                    </div>
-                                    <div class="form-field">
-                                        <label>Date of birth</label>
-                                        <input type="date" class="form-control" required>
+                                        <label>Surname</label>
+                                        <input type="text" class="form-control" placeholder="Surname" required>
                                     </div>
                                     <div class="form-field">
                                         <label>Address</label>
                                         <input type="text" class="form-control" placeholder="Address" required>
                                     </div>
+                                    <div class="form-field">
+                                        <label>Driving licence</label>
+                                        <div class="d-flex mt-2">
+                                            <div class="form-check me-3">
+                                                <input class="form-check-input shadow-none" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                <label class="form-check-label" for="flexRadioDefault1">
+                                                  UK
+                                                </label>
+                                              </div>
+                                              <div class="form-check">
+                                                <input class="form-check-input shadow-none" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                  EU
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Vehicle type</label>
+                                        <div class="form-field">
+                                            <select class="form-select" aria-label="Default select example">
+                                                <option selected>Car</option>
+                                                <option>Van</option>
+                                                <option>Bike</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Post code</label>
+                                        <input type="text" class="form-control" placeholder="Post code" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Email</label>
+                                        <input type="email" class="form-control" placeholder="Email" required>
+                                    </div>
+                                    <div class="form-field"></div>
                                     <div class="form-field submit-btn">
-                                        <button id="submit" class="default-btn" type="submit">Applu Now</button>
+                                        <button id="submit" class="default-btn" type="submit">Apply Now</button>
                                     </div>
                                 </div>
                                 <div id="form-messages" class="alert" role="alert"></div>

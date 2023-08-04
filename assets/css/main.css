@@ -5640,6 +5640,14 @@ blockquote span {
     color: var(--white-color);
 }
 
+.form-check-label, .form-check-input {
+    cursor: pointer;
+}
+.form-check-input:checked {
+    border-color: var(--secondary-color);
+    background-color: var(--secondary-color);
+}
+
 .copyright-text,
 .copyright-text a,
 .footer-bottom ul li a {
