@@ -358,6 +358,11 @@ body.loaded {
     z-index: 1;
 }
 
+
+.text-blue {
+    color: #446189;
+}
+
 .default-btn.blue {
     background-color: var(--secondary-color);
 }
@@ -3878,8 +3883,14 @@ body.loaded {
     }
 }
 
+.feature-lists .feature-item {
+    background-color: #fff !important;
+    padding: 10px;
+    border-radius: 10px;
+}
+
 .feature-lists .feature-item .feature-icon {
-    background-color: var(--bg-light-color);
+    background-color: #fff;
     border-radius: 5px;
     width: 70px;
     height: 70px;
@@ -5802,4 +5813,12 @@ blockquote span {
         font-size: 32px;
         line-height: 42px;
     }
+}
+
+.business-item {
+    text-align: center;
+}
+.business-item img {
+    height: 80px;
+    filter: grayscale(1) invert(.3);
 }
