@@ -451,4 +451,37 @@
 
     });
 
+    $('.auto-field').click(function() {
+        $(this).find('ul').slideDown(100)
+    })
+
+    $('.autocomplete').on('click', 'li', function() {
+        var address = $(this).html()
+        $(this).parents('.form-field').find('input').val(address)
+    })
+
+    $('.auto-field input').on('input', function() {
+        var searchText = $(this).val().toLowerCase();
+        
+        $(this).parents('.auto-field').find('li').each(function() {
+          var itemText = $(this).text().toLowerCase();
+          
+          if (itemText.indexOf(searchText) === -1) {
+            $(this).hide();
+          } else {
+            $(this).show();
+          }
+        });
+      });
+
+    $(document).on('click', function(event) {
+        var target = $(event.target);
+        var element = $('.auto-field input'); // Replace with your element's ID
+        
+        if (!target.closest(element).length && !target.is(element)) {
+            // This code will execute when clicking outside the element
+            $('.autocomplete').slideUp(100) // Replace with the function you want to execute
+        }
+    });
+
 })(jQuery);
