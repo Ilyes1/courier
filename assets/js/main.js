@@ -458,6 +458,7 @@
     $('.autocomplete').on('click', 'li', function() {
         var address = $(this).html()
         $(this).parents('.form-field').find('input').val(address)
+        $(this).parents('.form-field').find('.dropdown-btn').html(address)
     })
 
     $('.auto-field input').on('input', function() {
@@ -476,7 +477,7 @@
 
     $(document).on('click', function(event) {
         var target = $(event.target);
-        var element = $('.auto-field input'); // Replace with your element's ID
+        var element = $('.auto-field input, .auto-field .dropdown-btn'); // Replace with your element's ID
         
         if (!target.closest(element).length && !target.is(element)) {
             // This code will execute when clicking outside the element

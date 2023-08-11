@@ -5467,10 +5467,32 @@ blockquote span {
     padding: 0 10px;
     transition: .5s;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .form-field ul li:hover {
     background-color: #eee;
+}
+
+.form-field ul li img {
+    width: 18px;
+    margin-right: 10px;
+}
+
+.auto-field .dropdown-btn {
+    display: flex;
+    align-items: center;
+    color: var(--grey-color);
+}
+
+.auto-field .dropdown-btn img {
+    width: 18px;
+    margin-right: 10px;
+}
+
+.dropdown-btn {
+    cursor: pointer;
 }
 
 
@@ -5846,6 +5868,8 @@ blockquote span {
     text-align: center;
 }
 .business-item img {
-    height: 80px;
+    max-width: 100%;
+    max-height: 80px;
     filter: grayscale(1) invert(.3);
+    padding: 10px;
 }
