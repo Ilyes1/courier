@@ -25,7 +25,10 @@
     <link rel="stylesheet" href="assets/css/swiper.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdC0SKYjNDVYdSKXkMFvI8fFkZnl2qVn0&v=3.exp&sensor=false&libraries=places"></script>
+
 </head>
+
 
 <body class="header-2">
     <!--[if lt IE 8]>
@@ -387,17 +390,14 @@
         <h2 class="text-center">Delivering For Great Businesses</h2>
         <div class="container">
             <div class="row border-top border-bottom pt-4 pb-5 my-5">
-                <div class="col-md-3 col-6 mt-4 business-item">
+                <div class="col-md-4 col-6 mt-4 business-item">
                     <img src="./assets/img/b-1.png" alt="">
                 </div>
-                <div class="col-md-3 col-6 mt-4 business-item">
+                <div class="col-md-4 col-6 mt-4 business-item">
                     <img src="./assets/img/b-3.webp" alt="">
                 </div>
-                <div class="col-md-3 col-6 mt-4 business-item">
+                <div class="col-md-4 col-6 mt-4 business-item">
                     <img src="./assets/img/b-2.png" alt="">
-                </div>
-                <div class="col-md-3 col-6 mt-4 business-item">
-                    <img src="./assets/img/b-4.png" alt="">
                 </div>
             </div>
         </div>
@@ -464,7 +464,13 @@
                                     <div class="form-field">
                                         <input type="number" id="weight" class="form-control" placeholder="Weight (kg)" required>
                                     </div>
-                                    <div class="form-field auto-field wide">
+                                    <div class="form-field">
+                                        <input type="text" class="form-control" id="collection-address" placeholder="Collection Address" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <input type="text" class="form-control" id="delivery-address" placeholder="Delivery Address" required>
+                                    </div>
+                                    <!-- <div class="form-field auto-field wide">
                                         <input type="text" class="form-control" placeholder="Collection Address" required>
                                         <ul class="autocomplete">
                                             <li>1 Abbey Road, London</li>
@@ -491,7 +497,7 @@
                                             <li>30 George Square, Glasgow</li>
                                             <li>5 Princess Street, Belfast</li>
                                         </ul>
-                                    </div>
+                                    </div> -->
                                     <div class="form-field message">
                                         <textarea cols="30" rows="4" class="form-control" placeholder="Notes"></textarea>
                                     </div>
@@ -501,9 +507,11 @@
                                 </div>
                                 <div id="form-messages" class="alert" role="alert"></div>
                             </form>
+
                         </div>
                     </div>
                 </div>
+
                 <!-- <div class="col-md-6">
                     <div class="contact-form">
                         <form action="contact.php" method="post" id="ajax_contact" class="form-horizontal">
@@ -551,7 +559,7 @@
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.linkedin.com/in/hire-ready-now-509675257" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 offset-lg-1 col-md-6 footer-widget sm-padding">

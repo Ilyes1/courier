@@ -485,4 +485,14 @@
         }
     });
 
+
+    function initialize() {
+        var collection = document.getElementById('collection-address')
+        var delivery = document.getElementById('delivery-address')
+        new google.maps.places.Autocomplete(collection);
+        new google.maps.places.Autocomplete(delivery);
+      }
+      
+      google.maps.event.addDomListener(window, 'load', initialize);
+
 })(jQuery);
