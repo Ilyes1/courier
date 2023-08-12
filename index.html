@@ -419,10 +419,10 @@
                             <p class="text-start">Fill out the form below to receive a free quote from us instantly. If you have any questions or require urgent assistance, please email us at <a href="mailto:info@hirereadynow.com">info@hirereadynow.com</a></p>
                         </div>
                         <div class="contact-form">
-                            <form id="ajax_contact" class="form-horizontal">
+                            <form id="ajax_contact" class="form-horizontal" autocomplete="on">
                                 <div class="contact-form-group">
                                     <div class="form-field">
-                                        <input type="text" class="form-control" placeholder="Name" required>
+                                        <input type="text" class="form-control" placeholder="Name" autocomplete="on" required>
                                     </div>
                                     <div class="form-field">
                                         <input type="text" class="form-control" placeholder="Company Name" required>
@@ -439,28 +439,28 @@
                                             <option>Van</option>
                                             <option>Bike</option>
                                         </select> -->
-                                        <div class="form-control dropdown-btn">
+                                        <div class="form-control dropdown-btn" id="carType">
                                             <img src="./assets/icons/car.svg" alt="">
-                                            Car
+                                            <span>Car</span>
                                         </div>
                                         <ul class="autocomplete">
                                             <li>
                                                 <img src="./assets/icons/car.svg" alt="">
-                                                Car
+                                                <span>Car</span>
                                             </li>
                                             <li>
                                                 <img src="./assets/icons/van.svg" alt="">
-                                                Van
+                                                <span>Van</span>
                                             </li>
                                             <li>
                                                 <img src="./assets/icons/bike.svg" alt="">
-                                                Bike
+                                                <span>Bike</span>
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="form-field">
+                                    <!-- <div class="form-field">
                                         <input type="number" id="distance" class="form-control" placeholder="Distance (miles)" required>
-                                    </div>
+                                    </div> -->
                                     <div class="form-field">
                                         <input type="number" id="numItems" class="form-control" placeholder="Number of items" required>
                                     </div>
@@ -468,10 +468,10 @@
                                         <input type="number" id="weight" class="form-control" placeholder="Weight (kg)" required>
                                     </div>
                                     <div class="form-field">
-                                        <input type="text" class="form-control" id="collection-address" placeholder="Collection Address" required>
+                                        <input type="text" class="form-control" id="address-1" placeholder="Collection Address" required>
                                     </div>
                                     <div class="form-field">
-                                        <input type="text" class="form-control" id="delivery-address" placeholder="Delivery Address" required>
+                                        <input type="text" class="form-control" id="address-2" placeholder="Delivery Address" required>
                                     </div>
                                     <!-- <div class="form-field auto-field wide">
                                         <input type="text" class="form-control" placeholder="Collection Address" required>

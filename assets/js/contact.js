@@ -32,25 +32,68 @@ $(function() {
 		  totalCost += weight <= 10 ? additionalItemCostUnder10kg * (numItems - 1) : additionalItemCostOver10kg * (numItems - 1);
 		}
 	  
-		return totalCost.toFixed(2);
+		return totalCost.toFixed(2)
 	}
+
+
+
+	// Distance calculator
+	// function calculateDistance(origin, destination) {
+    //     var service = new google.maps.DistanceMatrixService();
+        
+    //     service.getDistanceMatrix({
+    //       origins: [origin],
+    //       destinations: [destination],
+    //       travelMode: 'DRIVING',
+    //       unitSystem: google.maps.UnitSystem.METRIC,
+    //     }, function(response, status) {
+    //       if (status !== 'OK') {
+    //         console.log('Error:', status);
+    //       }
+		  
+	// 		return (response.rows[0].elements[0].distance.value / 1609).toFixed(2);
+    //     });
+    // }
 
     // Set up an event listener for the contact form.
 	$(form).submit(function(event) {
 		// Stop the browser from submitting the form.
 		event.preventDefault();
 
-		const vehicleType = $('#carType').val().toLowerCase(); // 'car', 'van', or 'bike'
+		const vehicleType = $('#carType span').text().toLowerCase(); // 'car', 'van', or 'bike'
 		const weight = $('#weight').val(); // in kg
 		const distanceInMiles = $('#distance').val();
 		const numItems = $('#numItems').val();
 
-		const deliveryCost = calculateDeliveryCost(vehicleType, weight, distanceInMiles, numItems)
+		
+		
+		var originAddress = $('#address-1').val();
+		var destinationAddress = $('#address-2').val();
+		// const distance = calculateDistance(originAddress, destinationAddress);
+		var service = new google.maps.DistanceMatrixService();
+        
+        service.getDistanceMatrix({
+          origins: [originAddress],
+          destinations: [destinationAddress],
+          travelMode: 'DRIVING',
+          unitSystem: google.maps.UnitSystem.METRIC,
+        }, function(response, status) {
+          if (status !== 'OK') {
+            console.log('Error:', status);
+          } else {
+				var distance = (response.rows[0].elements[0].distance.value / 1609).toFixed(2)
+				var price = calculateDeliveryCost(vehicleType, weight, distance, numItems)
+				var message = `
+Distance: ${distance} miles 
+Price: £${price}`
+			  	alert(message)
+		  }
+		  
+        });
 
-		alert(deliveryCost)
 
-			///////// $(formMessages).removeClass('alert-danger');
-			///////// $(formMessages).addClass('alert-success');
+			/////// $(formMessages).removeClass('alert-danger');
+			/////// $(formMessages).addClass('alert-success');
 
 			// Set the message text.
 			///////// $(formMessages).text('Form submitted successfully! Expect your free quotation soon.');

@@ -487,12 +487,15 @@
 
 
     function initialize() {
-        var collection = document.getElementById('collection-address')
-        var delivery = document.getElementById('delivery-address')
+        var collection = document.getElementById('address-1')
+        var delivery = document.getElementById('address-2')
         new google.maps.places.Autocomplete(collection);
         new google.maps.places.Autocomplete(delivery);
-      }
+    }
       
-      google.maps.event.addDomListener(window, 'load', initialize);
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+      
+     
 
 })(jQuery);
