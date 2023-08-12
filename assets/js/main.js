@@ -54,7 +54,7 @@
             var menuWrapper = $("header .navigation-menu .main-menu").clone();
             $('.mobile-navigation-menu #mobile-menu-close').after(menuWrapper);
             
-                $("#mobile-menu-close, .mobile-menu-icon").on("click", function () {
+                $("#mobile-menu-close, .mobile-menu-icon, .quote-navlink").on("click", function () {
                     $(".mobile-menu-icon").toggleClass("menu-open");
                     $(".mobile-navigation-menu").toggleClass("open-mobile-menu");
                 });
