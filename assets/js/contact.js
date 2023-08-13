@@ -27,6 +27,9 @@ $(function() {
 		} else if (vehicleType === 'van') {
 		  totalCost += (standardPickupCost + standardMileCost * distanceInMiles) * vanMultiplier;
 		  totalCost += weight <= 10 ? additionalItemCostUnder10kg * (numItems - 1) : additionalItemCostOver10kg * (numItems - 1);
+		} else if (vehicleType === 'large van') {
+			totalCost += (standardPickupCost + standardMileCost * distanceInMiles) * vanMultiplier;
+			totalCost += weight <= 10 ? additionalItemCostUnder10kg * (numItems - 1) : additionalItemCostOver10kg * (numItems - 1);
 		} else if (vehicleType === 'bike') {
 		  totalCost += standardPickupCost - bikeDiscount + bikeMileCost * distanceInMiles;
 		  totalCost += weight <= 10 ? additionalItemCostUnder10kg * (numItems - 1) : additionalItemCostOver10kg * (numItems - 1);

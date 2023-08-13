@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="assets/css/swiper.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdC0SKYjNDVYdSKXkMFvI8fFkZnl2qVn0&v=3.exp&sensor=false&libraries=places"></script>
+
 </head>
 
 <body class="header-2">
@@ -117,7 +119,7 @@
                                     </div>
                                     <div class="form-field">
                                         <label>Address</label>
-                                        <input type="text" class="form-control" placeholder="Address" required>
+                                        <input type="text" class="form-control" id="address" placeholder="Address" required>
                                     </div>
                                     <div class="form-field">
                                         <label>Post code</label>
@@ -140,15 +142,29 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-field">
-                                        <label>Vehicle type</label>
-                                        <div class="form-field">
-                                            <select class="form-select" aria-label="Default select example">
-                                                <option selected>Car</option>
-                                                <option>Van</option>
-                                                <option>Bike</option>
-                                            </select>
+                                    <div class="form-field auto-field">
+                                        <div class="form-control dropdown-btn">
+                                            <img src="./assets/icons/car.svg" alt="">
+                                            <span>Car</span>
                                         </div>
+                                        <ul class="autocomplete">
+                                            <li>
+                                                <img src="./assets/icons/car.svg" alt="">
+                                                <span>Car</span>
+                                            </li>
+                                            <li>
+                                                <img src="./assets/icons/van.svg" alt="">
+                                                <span>Van</span>
+                                            </li>
+                                            <li>
+                                                <img src="./assets/icons/largeVan.svg" alt="">
+                                                <span>Large Van</span>
+                                            </li>
+                                            <li>
+                                                <img src="./assets/icons/bike.svg" alt="">
+                                                <span>Bike</span>
+                                            </li>
+                                        </ul>
                                     </div>
                                     <div class="form-field">
                                         <label>Contact number</label>
