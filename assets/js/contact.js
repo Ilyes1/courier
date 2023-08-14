@@ -58,11 +58,7 @@ $(function() {
     //     });
     // }
 
-    // Set up an event listener for the contact form.
-	$(form).submit(function(event) {
-		// Stop the browser from submitting the form.
-		event.preventDefault();
-
+	function calculator() {
 		const vehicleType = $('#carType span').text().toLowerCase(); // 'car', 'van', or 'bike'
 		const weight = $('#weight').val(); // in kg
 		const distanceInMiles = $('#distance').val();
@@ -93,6 +89,15 @@ Price: £${price}`
 		  }
 		  
         });
+	}
+
+    // Set up an event listener for the contact form.
+	$(form).submit(function(event) {
+		// Stop the browser from submitting the form.
+		event.preventDefault();
+
+		$('.terms-opener').click()
+		
 
 
 			/////// $(formMessages).removeClass('alert-danger');
@@ -140,5 +145,16 @@ Price: £${price}`
 		// });
 
 	});
+
+	$('.terms-submit').click(function() {
+		if ($('.terms-check').prop('checked')) {
+			calculator()
+		  } else {
+			$('.terms-error').addClass('active')
+			setTimeout(() => {
+				$('.terms-error').removeClass('active')
+			}, 3000);
+		  }
+	})
 
 });

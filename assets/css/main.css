@@ -5549,6 +5549,64 @@ blockquote span {
     }
 }
 
+/* service feature */
+.service-feat {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    transition: .3s;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.service-feat:hover {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+.service-feat-icon {
+    width: 80px;
+    height: 80px;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.service-feat-icon img {
+    height: 40px;
+}
+
+
+.modal-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-top h5 {
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.modal-top img {
+    height: 20px;
+    cursor: pointer;
+}
+
+.terms-error {
+    margin-bottom: 0;
+    opacity: 0;
+}
+
+.terms-error.active {
+    opacity: 1;
+}
+
 /*** 28.0 - Branches Section ***/
 .branches-list h3 {
     font-size: 14px;
