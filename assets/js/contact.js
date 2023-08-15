@@ -40,24 +40,6 @@ $(function() {
 
 
 
-	// Distance calculator
-	// function calculateDistance(origin, destination) {
-    //     var service = new google.maps.DistanceMatrixService();
-        
-    //     service.getDistanceMatrix({
-    //       origins: [origin],
-    //       destinations: [destination],
-    //       travelMode: 'DRIVING',
-    //       unitSystem: google.maps.UnitSystem.METRIC,
-    //     }, function(response, status) {
-    //       if (status !== 'OK') {
-    //         console.log('Error:', status);
-    //       }
-		  
-	// 		return (response.rows[0].elements[0].distance.value / 1609).toFixed(2);
-    //     });
-    // }
-
 	function calculator() {
 		const vehicleType = $('#carType span').text().toLowerCase(); // 'car', 'van', or 'bike'
 		const weight = $('#weight').val(); // in kg
@@ -96,65 +78,116 @@ Price: £${price}`
 		// Stop the browser from submitting the form.
 		event.preventDefault();
 
-		$('.terms-opener').click()
-		
-
-
-			/////// $(formMessages).removeClass('alert-danger');
-			/////// $(formMessages).addClass('alert-success');
-
-			// Set the message text.
-			///////// $(formMessages).text('Form submitted successfully! Expect your free quotation soon.');
-
-
-
-		// Serialize the form data.
-		// var formData = $(form).serialize();
-		// // Submit the form using AJAX.
-		// $.ajax({
-		// 	type: 'POST',
-		// 	url: $(form).attr('action'),
-		// 	data: formData
-		// })
-		// .done(function(response) {
-		// 	// Make sure that the formMessages div has the 'success' class.
-		// 	$(formMessages).removeClass('alert-danger');
-		// 	$(formMessages).addClass('alert-success');
-
-		// 	// Set the message text.
-		// 	$(formMessages).text(response);
-
-		// 	// Clear the form.
-		// 	$('#firstname').val('');
-		// 	$('#lastname').val('');
-		// 	$('#phone').val('');
-		// 	$('#email').val('');
-		// 	$('#message').val('');
-		// })
-		// .fail(function(data) {
-		// 	// Make sure that the formMessages div has the 'error' class.
-		// 	// $(formMessages).removeClass('alert-success');
-		// 	$(formMessages).addClass('alert-success');
-
-		// 	// Set the message text.
-		// 	if (data.responseText !== '') {
-		// 		$(formMessages).text(data.responseText);
-		// 	} else {
-		// 		$(formMessages).text('Oops! An error occured and your message could not be sent.');
-		// 	}
-		// });
-
-	});
-
-	$('.terms-submit').click(function() {
 		if ($('.terms-check').prop('checked')) {
 			calculator()
-		  } else {
+		} else {
 			$('.terms-error').addClass('active')
 			setTimeout(() => {
 				$('.terms-error').removeClass('active')
 			}, 3000);
-		  }
+		}
+
+	});
+
+
+	function calculateMultiDropCharge(numStops, totalDistanceMiles, vehicleType, itemsWeight, isWeekend, isPriorityBooking, isOutOfHours) {
+		const standardFirstMileCharge = 7;
+		const perMileCharge = 2.20;
+		const additionalItemCharge = 1.20;
+		const vanMultiplier = 1.75;
+		const extraLargeVanMultiplier = 2.0;
+		const weightThreshold = 10;
+		const additionalWeightCharge = 5;
+		const bikeDiscount = 1;
+		const weekendSurcharge = 2;
+		const priorityBookingMultiplier = 0.75;
+		const outOfHoursChargeWeekday = 12.50;
+		const outOfHoursChargeWeekend = 15;
+	
+		let totalCharge = 0;
+	
+		if (vehicleType === 'van') {
+			totalCharge = (standardFirstMileCharge + (totalDistanceMiles - 1) * perMileCharge) * vanMultiplier;
+		} else if (vehicleType === 'large van') {
+			totalCharge = (standardFirstMileCharge + (totalDistanceMiles - 1) * perMileCharge) * extraLargeVanMultiplier;
+		} else {
+			totalCharge = (standardFirstMileCharge - bikeDiscount + (totalDistanceMiles - 1) * perMileCharge);
+		}
+	
+		if (itemsWeight > weightThreshold) {
+			totalCharge += (itemsWeight - weightThreshold) * additionalWeightCharge;
+		}
+	
+		totalCharge += (numStops - 1) * additionalItemCharge;
+	
+		if (isWeekend) {
+			totalCharge += weekendSurcharge;
+		}
+	
+		if (isPriorityBooking) {
+			totalCharge *= (1 + priorityBookingMultiplier);
+		}
+	
+		if (isOutOfHours) {
+			if (isWeekend) {
+				totalCharge += outOfHoursChargeWeekend;
+			} else {
+				totalCharge += outOfHoursChargeWeekday;
+			}
+		}
+	
+		return totalCharge;
+	}
+
+
+	$('#multiDropsForm').submit(function(e) {
+
+		e.preventDefault()
+
+		const vehicleType = $('#carType span').text().toLowerCase(); // 'car', 'van', or 'bike'
+		const weight = $('#weight').val(); // in kg
+		const distanceInMiles = $('#distance').val();
+		const numItems = $('#numItems').val();
+
+		const numStops = $('#numStops').val();
+		const isWeekend = $('#weekendCheck').prop('checked');
+		const isPriorityBooking = $('#priorityCheck').prop('checked');
+		const isOutOfHours = $('#outCheck').prop('checked');
+
+
+		if ($('.terms-check').prop('checked')) {
+			var originAddress = $('#address-1').val();
+			var destinationAddress = $('#address-2').val();
+			// const distance = calculateDistance(originAddress, destinationAddress);
+			var service = new google.maps.DistanceMatrixService();
+			
+			service.getDistanceMatrix({
+			  origins: [originAddress],
+			  destinations: [destinationAddress],
+			  travelMode: 'DRIVING',
+			  unitSystem: google.maps.UnitSystem.METRIC,
+			}, function(response, status) {
+			  if (status !== 'OK') {
+				console.log('Error:', status);
+			  } else {
+					var distance = (response.rows[0].elements[0].distance.value / 1609).toFixed(2)
+					var price = calculateMultiDropCharge(numStops, distance, vehicleType, weight, isWeekend, isPriorityBooking, isOutOfHours)
+					var message = `
+Distance: ${distance} miles 
+Price: £${price}`
+					alert(message)
+			  }
+			  
+			});
+		} else {
+			$('.terms-error').addClass('active')
+			setTimeout(() => {
+				$('.terms-error').removeClass('active')
+			}, 3000);
+		}
+		
+		
+
 	})
 
 });

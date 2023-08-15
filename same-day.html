@@ -74,7 +74,7 @@
                             <li><a href="faq.html">FAQ</a></li>
                             <li><a href="blog.html">Blog</a></li>
                             <li><a href="contact.html">Contact</a></li>
-                            <li class="d-lg-none header-login"><a href="login.html" class="border-end">Customer Login</a><a href="signup.html">Signup</a></li>
+                            <!-- <li class="d-lg-none header-login"><a href="login.html" class="border-end">Customer Login</a><a href="signup.html">Signup</a></li> -->
                         </ul>
                     </nav>
                     <div class="mobile-menu-icon">
@@ -104,7 +104,7 @@
     <!--/.popupsearch-box-->
     <div id="searchbox-overlay"></div>
 
-    <section class="page-header">
+    <section class="page-header" style="background-image: url(./assets/img/same-day.jpg);">
         <div class="page-header-shape"></div>
         <div class="container">
             <div class="page-header-info">
@@ -118,13 +118,6 @@
 
     <section class="service-section bg-grey padding">
         <div class="container">
-
-            <div class="section-heading text-center mb-40 wow fade-in-bottom" data-wow-delay="200ms">
-                <h2>Man & Van Solutions</h2>
-                <p>
-                    Uncover a new level of moving excellence through Hire Ready Now's specialized Man and Van service. Tailored to deliver a distinctive and stress-free moving experience, our service is designed to redefine how you transition to your new destination.
-                </p>
-            </div>
             
             <div class="row mb-5 wow fade-in-bottom" data-wow-delay="200ms">
                 <div class="col-md-6 mt-4">
@@ -232,7 +225,6 @@
                         <ul class="contact-details">
                             <li><i class="las la-map-marked-alt"></i>86-90, Paul Street, London, <br> England, United Kingdom, EC2A 4NE</li>
                             <li><i class="las la-envelope-open"></i>info@hirereadynow.com</li>
-                            <li><i class="las la-phone-volume"></i>(+123) 456 789 101 <br>+1-302-123-4567</li>
                         </ul>
                     </div>
                 </div>
@@ -294,7 +286,19 @@
                                         </ul>
                                     </div>
                                     <div class="form-field">
-                                        <input type="number" id="numItems" class="form-control" placeholder="Number of items" required>
+                                        <select class="form-select" id="numItems">
+                                            <option selected>Number of items</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                        </select>
                                     </div>
                                     <div class="form-field">
                                         <input type="number" id="weight" class="form-control" placeholder="Weight (kg)" required>
@@ -308,13 +312,21 @@
                                     <div class="form-field message">
                                         <textarea cols="30" rows="4" class="form-control" placeholder="Notes"></textarea>
                                     </div>
+                                    <div class="form-field wide form-check">
+                                        <input class="form-check-input shadow-none terms-check mt-1" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            By confirming your booking, you acknowledge that you have read, understood, and agreed to these <span class="text-blue" data-bs-toggle="modal" data-bs-target="#exampleModal"> Terms and Conditions</span>. If you do not agree with any part of these Terms, please do not proceed with your booking.
+                                        </label>
+                                    </div>
+                                    <div class="form-field wide">
+                                        <h6 class="terms-error text-danger">Please aggree to the terms & conditions</h6>
+                                    </div>
                                     <div class="form-field submit-btn">
                                         <button id="submit" class="default-btn" type="submit">Get an Instant Quotation</button>
                                     </div>
                                 </div>
                                 <div id="form-messages" class="alert" role="alert"></div>
                             </form>
-                            <button type="button" class="btn btn-primary terms-opener" hidden data-bs-toggle="modal" data-bs-target="#exampleModal"></button>
                               
 
                         </div>
@@ -335,19 +347,15 @@
                 <div class="col-lg-3 col-md-6 footer-widget sm-padding">
                     <a href="index.html" class="footer-logo"><img src="assets/img/logo-light.png" alt="logo"></a>
                     <p>We are committed to providing reliable and efficient courier services to meet all your delivery needs.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://instagram.com/hirereadynow_ltd?utm_source=qr&igshid=NGExMmI2YTkyZg%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/hire-ready-now-509675257" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
                 </div>
-                <div class="col-lg-3 offset-lg-1 col-md-6 footer-widget sm-padding">
+                <div class="col-lg-2 offset-lg-1 col-md-6 footer-widget sm-padding">
                     <h3 class="widget-title">Quick links</h3>
                     <ul>
-                        <li><a href="#">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="index.html#onlineQuote">Online quote</a></li>
                         <li><a href="join.html">Become a courier</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="our-services.html">Our services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -358,9 +366,14 @@
                         <li>info@hirereadynow.com</li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-6 footer-widget sm-padding">
+                <div class="col-lg-3 col-md-6 footer-widget sm-padding">
                     <h3 class="widget-title">Get in touch</h3>
                     <a href="contact.html" class="contact-btn">Contact us</a>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/hirereadynow_ltd?utm_source=qr&igshid=NGExMmI2YTkyZg%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/hire-ready-now-509675257" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
             </div><!-- /.footer-widgets -->
             <div class="footer-bottom">
@@ -368,7 +381,7 @@
                     &copy; <span id="currentYear"></span> Hire Ready Now, All Rights Reserved.
                 </div>
                 <ul>
-                    <li><a href="#">Signup</a></li>
+                    <li><a href="signup.html">Signup</a></li>
                     <li><a href="join.html">Become a courier</a></li>
                     <li><a href="login.html">Customer Login</a></li>
                 </ul>
@@ -450,16 +463,7 @@
               <p>
                 Hire Ready Now reserves the right to modify these Terms at any time. Changes will be effective upon posting on our website or notifying you directly.
               </p>
-              <div class="form-check mt-4">
-                  <input class="form-check-input shadow-none terms-check mt-1" type="checkbox" value="" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">
-                      By confirming your booking, you acknowledge that you have read, understood, and agreed to these Terms and Conditions. If you do not agree with any part of these Terms, please do not proceed with your booking.
-                  </label>
               </div>
-            </div>
-            <div class="modal-footer d-flex align-items-center justify-content-between">
-                <h6 class="terms-error text-danger">Please aggree to the terms & conditions</h6>
-                <button class="default-btn terms-submit">Submit</button>
             </div>
           </div>
         </div>
