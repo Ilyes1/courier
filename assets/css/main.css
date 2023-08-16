@@ -358,6 +358,9 @@ body.loaded {
     z-index: 1;
 }
 
+.default-btn.blue-default {
+    background-color: #3f537c;
+}
 
 .text-blue {
     color: #446189;
@@ -701,6 +704,7 @@ body.loaded {
 
 .topbar-right ul li a {
     color: var(--grey-light-color);
+    font-size: 1rem !important;
 }
 
 .topbar-right ul li a:hover {
@@ -2620,6 +2624,15 @@ body.loaded {
     margin: 30px 0;
 }
 
+.service-feature-icon {
+    width: 150px !important;
+}
+
+.service-feature-icon img {
+    width: 100%;
+    height: auto;
+}
+
 .service-features li {
     display: flex;
     align-items: flex-start;
@@ -2650,7 +2663,7 @@ body.loaded {
 }
 
 .service-details-list img {
-    height: 220px;
+    /* height: 220px; */
     margin: 0;
 }
 
@@ -4965,7 +4978,7 @@ blockquote span {
 
 /* Banner */
 .sidebar-widget.banner {
-    background-image: url(../img/banner-bg.jpg);
+    background-image: url(../img/slider-2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 3px;
