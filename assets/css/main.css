@@ -926,7 +926,7 @@ body.loaded {
     .main-menu li a {
         font-family: var(--primary-font);
         color: var(--dark-color);
-        font-size: 15px;
+        font-size: 20px;
         line-height: 1;
         font-weight: 700;
     }
@@ -1018,6 +1018,7 @@ body.loaded {
         color: var(--dark-color);
         font-family: var(--primary-font);
         font-weight: 600;
+        font-size: 1.1rem;
     }
 
     .header-2 .topbar-right li {
@@ -5109,7 +5110,7 @@ blockquote span {
     display: inline-block;
     position: relative;
     padding-left: 70px;
-    font-size: 18px;
+    font-size: 26px;
     font-weight: 600;
     background: #089FAC;
     background: linear-gradient(to right, #089FAC 0%, #ff6a32 100%);
