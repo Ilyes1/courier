@@ -33,10 +33,12 @@
 */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Syne:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
 /*** 1.0 - CSS Variables ***/
 :root {
-    --primary-font: "Syne", sans-serif;
+    /* --primary-font: "Syne", sans-serif; */
+    --primary-font: "Abel", sans-serif;
     --secondary-font: "DM Sans", sans-serif;
     --primary-color: #666666;
     --secondary-color: #89CFF0;
