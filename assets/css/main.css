@@ -5947,3 +5947,13 @@ blockquote span {
     filter: grayscale(1) invert(.3);
     padding: 10px;
 }
+
+
+.success-section {
+    text-align: center;   
+}
+
+.success-section img {
+    height: 120px;
+    margin-bottom: 20px;
+}

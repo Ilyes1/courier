@@ -25,8 +25,6 @@
     <link rel="stylesheet" href="assets/css/swiper.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdC0SKYjNDVYdSKXkMFvI8fFkZnl2qVn0&v=3.exp&sensor=false&libraries=places"></script>
-
 </head>
 
 <body class="header-2">
@@ -90,105 +88,35 @@
     </header>
     <!--/.main-header-->
 
-    
+    <div id="popup-search-box">
+        <div class="box-inner-wrap d-flex align-items-center">
+            <form id="form" action="#" method="get" role="search">
+                <input id="popup-search" type="text" name="s" placeholder="Type keywords here...">
+                <button id="popup-search-button" type="submit" name="submit">
+                    <i class="las la-search"></i>
+                </button>
+            </form>
+            <div class="search-close"><i class="las la-times"></i></div>
+        </div>
+    </div>
+    <!--/.popupsearch-box-->
+    <div id="searchbox-overlay"></div>
 
-    
-
-
-
-    <section class="contact-section bd-bottom padding">
-        <!-- <div class="map-pattern"></div> -->
+    <section class="py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-md-10 m-auto">
-                    <div class="contact-details-wrap">
-                        <div class="section-heading text-center mb-30">
-                            <h4 class="sub-heading">Apply Now</h4>
-                            <h2>Get Started</h2>
-                        </div>
-                        <div class="contact-form">
-                            <form class="form-horizontal application-form">
-                                <div class="contact-form-group">
-                                    <div class="form-field">
-                                        <label>Name</label>
-                                        <input type="text" class="form-control" placeholder="Name" required>
-                                    </div>
-                                    <div class="form-field">
-                                        <label>Surname</label>
-                                        <input type="text" class="form-control" placeholder="Surname" required>
-                                    </div>
-                                    <div class="form-field">
-                                        <label>Address</label>
-                                        <input type="text" class="form-control" id="address" placeholder="Address" required>
-                                    </div>
-                                    <div class="form-field">
-                                        <label>Post code</label>
-                                        <input type="text" class="form-control" placeholder="Post code" required>
-                                    </div>
-                                    <div class="form-field">
-                                        <label>Driving licence</label>
-                                        <div class="d-flex mt-2">
-                                            <div class="form-check me-3">
-                                                <input class="form-check-input shadow-none" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                                <label class="form-check-label" for="flexRadioDefault1">
-                                                  UK
-                                                </label>
-                                              </div>
-                                              <div class="form-check">
-                                                <input class="form-check-input shadow-none" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                                <label class="form-check-label" for="flexRadioDefault2">
-                                                  EU
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-field auto-field">
-                                        <div class="form-control dropdown-btn">
-                                            <img src="./assets/icons/car.svg" alt="">
-                                            <span>Car</span>
-                                        </div>
-                                        <ul class="autocomplete">
-                                            <li>
-                                                <img src="./assets/icons/car.svg" alt="">
-                                                <span>Car</span>
-                                            </li>
-                                            <li>
-                                                <img src="./assets/icons/van.svg" alt="">
-                                                <span>Van</span>
-                                            </li>
-                                            <li>
-                                                <img src="./assets/icons/largeVan.svg" alt="">
-                                                <span>Large Van</span>
-                                            </li>
-                                            <li>
-                                                <img src="./assets/icons/bike.svg" alt="">
-                                                <span>Bike</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="form-field">
-                                        <label>Contact number</label>
-                                        <input type="text" class="form-control" placeholder="Contact number" required>
-                                    </div>
-                                    <div class="form-field">
-                                        <label>Email</label>
-                                        <input type="email" class="form-control" placeholder="Email" required>
-                                    </div>
-                                    <div class="form-field submit-btn">
-                                        <button id="submit" class="default-btn" type="submit">Submit</button>
-                                    </div>
-                                </div>
-                                <div id="form-messages" class="alert" role="alert"></div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-               
+            <div class="col-lg-8 m-auto success-section">
+                <img src="./assets/icons/checkGreen.svg" alt="">
+                <h4 class="fw-bold">Thank you for selecting Hire Ready Now Ltd!</h4>
+                <p>
+                     We are currently in the process of creating a personalised quote for you. While you await the quote, we invite you to explore the informative content on the Hire Ready Now Ltd blog. Delve into our thought-provoking articles and industry insights, and anticipate the comprehensive quote that will be arriving in your email inbox soon.
+                </p>
             </div>
         </div>
     </section>
-    <!--/.contact-section-->
 
+    
+
+    
     <footer class="footer-wrapper">
         <div class="map-pattern light"></div>
         <div class="shape-pattern"></div>
@@ -238,7 +166,7 @@
             </div><!-- /.footer-bottom -->
         </div><!-- /.container -->
     </footer><!-- /.footer-wrapper -->
-    
+
     <div id="scrollup">
         <button id="scroll-top" class="scroll-to-top">
             <i class="las la-arrow-up"></i>
@@ -259,7 +187,6 @@
     <script src="assets/js/vendor/smooth-scroll.js"></script>
     <script src="assets/js/vendor/chart.min.js"></script>
     <script src="assets/js/vendor/wow.min.js"></script>
-    <script src="assets/js/contact.js"></script>
     <script src="assets/js/main.js"></script>
 
 </body>

@@ -68,6 +68,7 @@ $(function() {
 Distance: ${distance} miles 
 Price: £${price}`
 			  	alert(message)
+				window.location.pathname = '/quotation-success.html'
 		  }
 		  
         });
@@ -176,6 +177,7 @@ Price: £${price}`
 Distance: ${distance} miles 
 Price: £${price}`
 					alert(message)
+					window.location.pathname = '/quotation-success.html'
 			  }
 			  
 			});

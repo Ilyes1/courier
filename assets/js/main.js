@@ -499,6 +499,11 @@
       
     google.maps.event.addDomListener(window, 'load', initialize);
 
+
+    $('.application-form').submit(function(e) {
+        e.preventDefault()
+        window.location.pathname = '/application-success.html'
+    })
       
      
 
