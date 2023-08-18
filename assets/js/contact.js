@@ -78,6 +78,7 @@ Price: £${price}`
 	$(form).submit(function(event) {
 		
 		event.preventDefault();
+		window.location.pathname = '/quotation-success.html'
 
 		// if ($('.terms-check').prop('checked')) {
 		// 	calculator()
