@@ -76,17 +76,17 @@ Price: £${price}`
 
     // Set up an event listener for the contact form.
 	$(form).submit(function(event) {
-		// Stop the browser from submitting the form.
+		
 		event.preventDefault();
 
-		if ($('.terms-check').prop('checked')) {
-			calculator()
-		} else {
-			$('.terms-error').addClass('active')
-			setTimeout(() => {
-				$('.terms-error').removeClass('active')
-			}, 3000);
-		}
+		// if ($('.terms-check').prop('checked')) {
+		// 	calculator()
+		// } else {
+		// 	$('.terms-error').addClass('active')
+		// 	setTimeout(() => {
+		// 		$('.terms-error').removeClass('active')
+		// 	}, 3000);
+		// }
 
 	});
 

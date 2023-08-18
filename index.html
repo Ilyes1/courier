@@ -425,23 +425,23 @@
                             <form id="ajax_contact" class="form-horizontal" autocomplete="on">
                                 <div class="contact-form-group">
                                     <div class="form-field">
+                                        <label>Name</label>
                                         <input type="text" class="form-control" placeholder="Name" autocomplete="on" required>
                                     </div>
                                     <div class="form-field">
+                                        <label>Company Name</label>
                                         <input type="text" class="form-control" placeholder="Company Name" required>
                                     </div>
                                     <div class="form-field">
+                                        <label>Email Address</label>
                                         <input type="text" class="form-control" placeholder="Email Address" required>
                                     </div>
                                     <div class="form-field">
+                                        <label>Phone Number</label>
                                         <input type="text" class="form-control" placeholder="Phone Number" required>
                                     </div>
                                     <div class="form-field auto-field">
-                                        <!-- <select class="form-select" id="carType" aria-label="Default select example">
-                                            <option selected>Car</option>
-                                            <option>Van</option>
-                                            <option>Bike</option>
-                                        </select> -->
+                                        <label>Vehicle</label>
                                         <div class="form-control dropdown-btn" id="carType">
                                             <img src="./assets/icons/car.svg" alt="">
                                             <span>Car</span>
@@ -465,12 +465,9 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <!-- <div class="form-field">
-                                        <input type="number" id="distance" class="form-control" placeholder="Distance (miles)" required>
-                                    </div> -->
                                     <div class="form-field">
+                                        <label>Number of items</label>
                                         <select class="form-select" id="numItems">
-                                            <option selected>Number of items</option>
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
@@ -484,43 +481,39 @@
                                         </select>
                                     </div>
                                     <div class="form-field">
-                                        <input type="number" id="weight" class="form-control" placeholder="Weight (kg)" required>
+                                        <label>Weight</label>
+                                        <select id="weight" class="form-select">
+                                            <option>0 - 10kg</option>
+                                            <option>10 - 20kg</option>
+                                            <option>+20kg</option>
+                                        </select>
                                     </div>
                                     <div class="form-field">
+                                        <label>Delivery Type</label>
+                                        <select id="type" class="form-select">
+                                            <option>Standard</option>
+                                            <option>Priority</option>
+                                            <option>Timed</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Collection Time</label>
+                                        <input type="datetime-local" id="collectionTime" class="form-control" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Collection Address</label>
                                         <input type="text" class="form-control" id="address-1" placeholder="Collection Address" required>
                                     </div>
                                     <div class="form-field">
+                                        <label>Delivery Time</label>
+                                        <input type="datetime-local" id="deliveryTime" class="form-control" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Delivery Address</label>
                                         <input type="text" class="form-control" id="address-2" placeholder="Delivery Address" required>
                                     </div>
-                                    <!-- <div class="form-field auto-field wide">
-                                        <input type="text" class="form-control" placeholder="Collection Address" required>
-                                        <ul class="autocomplete">
-                                            <li>1 Abbey Road, London</li>
-                                            <li>10 Downing Street, London</li>
-                                            <li>221B Baker Street, London</li>
-                                            <li>Buckingham Palace, London</li>
-                                            <li>Wembley Stadium, London</li>
-                                            <li>10 Market Street, Manchester</li>
-                                            <li>15 Rose Crescent, Edinburgh</li>
-                                            <li>30 George Square, Glasgow</li>
-                                            <li>5 Princess Street, Belfast</li>
-                                        </ul>
-                                    </div>
-                                    <div class="form-field auto-field wide">
-                                        <input type="text" class="form-control" placeholder="Delivery Address" required>
-                                        <ul class="autocomplete">
-                                            <li>1 Abbey Road, London</li>
-                                            <li>10 Downing Street, London</li>
-                                            <li>221B Baker Street, London</li>
-                                            <li>Buckingham Palace, London</li>
-                                            <li>Wembley Stadium, London</li>
-                                            <li>10 Market Street, Manchester</li>
-                                            <li>15 Rose Crescent, Edinburgh</li>
-                                            <li>30 George Square, Glasgow</li>
-                                            <li>5 Princess Street, Belfast</li>
-                                        </ul>
-                                    </div> -->
                                     <div class="form-field message">
+                                        <label>Notes</label>
                                         <textarea cols="30" rows="4" class="form-control" placeholder="Notes"></textarea>
                                     </div>
                                     <div class="form-field wide form-check">
