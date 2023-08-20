@@ -4,6 +4,9 @@
 * @ThemeEaster
 */
 $(function() {
+
+	emailjs.init('ajv0ohMpXvECxamAa');
+
     // Get the form.
     var form = $('#ajax_contact');
 
@@ -78,7 +81,31 @@ Price: £${price}`
 	$(form).submit(function(event) {
 		
 		event.preventDefault();
-		window.location.pathname = '/quotation-success.html'
+
+		var templateParams = {
+			name: $('#name').val(),
+			email: $('#email').val(),
+			company_name: $('#companyName').val(),
+			phone_number: $('#phone').val(),
+			vehicle: $('#carType span').text(),
+			cellection_time: $('#collectionTime').val(),
+			collection_address: $('#address-1').val(),
+			delivery_time: $('#deliveryTime').val(),
+			delivery_address: $('#address-2').val(),
+			number_of_items: $('#numItems').val(),
+			weight: $('#weight').val(),
+			type: $('#type').val(),
+			notes: $('#notes').val()
+		};
+
+		emailjs.send('service_5ibjqp3', 'template_0g9dkri', templateParams)
+		.then(function(response) {
+				console.log('SUCCESS!', response.status, response.text);
+				window.location.pathname = '/quotation-success.html'
+		}, function(error) {
+			console.log('FAILED...', error);
+		});
+
 
 		// if ($('.terms-check').prop('checked')) {
 		// 	calculator()

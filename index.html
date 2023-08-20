@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="assets/css/main.css">
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdC0SKYjNDVYdSKXkMFvI8fFkZnl2qVn0&v=3.exp&sensor=false&libraries=places"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 </head>
 
@@ -327,7 +328,9 @@
                     </div>
                     <div class="about-content">
                         <p>Get your large items delivered on time and hassle-free with our reliable solutions. Whether it's heavy equipment, large parcels, or more, we've got you covered!</p>
-                        <a href="index.html#onlineQuote" class="default-btn">Make a Booking</a>
+                        <div class="d-flex justify-content-center">
+                            <a href="index.html#onlineQuote" class="default-btn">Make a Booking</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -426,19 +429,19 @@
                                 <div class="contact-form-group">
                                     <div class="form-field">
                                         <label>Name</label>
-                                        <input type="text" class="form-control" placeholder="Name" autocomplete="on" required>
+                                        <input type="text" class="form-control" placeholder="Name" id="name" autocomplete="on" required>
                                     </div>
                                     <div class="form-field">
                                         <label>Company Name</label>
-                                        <input type="text" class="form-control" placeholder="Company Name" required>
+                                        <input type="text" class="form-control" placeholder="Company Name" id="companyName" required>
                                     </div>
                                     <div class="form-field">
                                         <label>Email Address</label>
-                                        <input type="text" class="form-control" placeholder="Email Address" required>
+                                        <input type="text" class="form-control" placeholder="Email Address" id="email" required>
                                     </div>
                                     <div class="form-field">
                                         <label>Phone Number</label>
-                                        <input type="text" class="form-control" placeholder="Phone Number" required>
+                                        <input type="text" class="form-control" placeholder="Phone Number" id="phone" required>
                                     </div>
                                     <div class="form-field auto-field">
                                         <label>Vehicle</label>
@@ -514,7 +517,7 @@
                                     </div>
                                     <div class="form-field message">
                                         <label>Notes</label>
-                                        <textarea cols="30" rows="4" class="form-control" placeholder="Notes"></textarea>
+                                        <textarea cols="30" rows="4" class="form-control" id="notes" placeholder="Notes"></textarea>
                                     </div>
                                     <div class="form-field wide form-check">
                                         <input class="form-check-input shadow-none terms-check mt-1" type="checkbox" value="" id="flexCheckDefault">
@@ -525,7 +528,7 @@
                                     <div class="form-field wide">
                                         <h6 class="terms-error text-danger">Please agree to the terms & conditions</h6>
                                     </div>
-                                    <div class="form-field submit-btn">
+                                    <div class="form-field wide text-center">
                                         <button id="submit" class="default-btn" type="submit">Get an Instant Quotation</button>
                                     </div>
                                 </div>
@@ -559,7 +562,7 @@
                                 <div class="form-field message">
                                     <textarea id="message" name="message" cols="30" rows="4" class="form-control" placeholder="Message" required></textarea>
                                 </div>
-                                <div class="form-field submit-btn">
+                                <div class="form-field wide text-center">
                                     <button id="submit" class="default-btn" type="submit">Send Massage</button>
                                 </div>
                             </div>
@@ -614,9 +617,8 @@
                     &copy; <span id="currentYear"></span> Hire Ready Now, All Rights Reserved.
                 </div>
                 <ul>
-                    <li><a href="signup.html">Signup</a></li>
-                    <li><a href="join.html">Become a courier</a></li>
-                    <li><a href="login.html">Customer Login</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
                 </ul>
             </div><!-- /.footer-bottom -->
         </div><!-- /.container -->
