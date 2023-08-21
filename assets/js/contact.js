@@ -85,15 +85,12 @@ Price: £${price}`
 		var templateParams = {
 			name: $('#name').val(),
 			email: $('#email').val(),
-			company_name: $('#companyName').val(),
 			phone_number: $('#phone').val(),
 			vehicle: $('#carType span').text(),
 			cellection_time: $('#collectionTime').val(),
 			collection_address: $('#address-1').val(),
-			delivery_time: $('#deliveryTime').val(),
 			delivery_address: $('#address-2').val(),
 			number_of_items: $('#numItems').val(),
-			weight: $('#weight').val(),
 			type: $('#type').val(),
 			notes: $('#notes').val()
 		};
@@ -218,6 +215,26 @@ Price: £${price}`
 		
 		
 
+	})
+
+
+	$('#contactForm').submit(function(e) {
+		e.preventDefault()
+
+		var templateParams = {
+			name: `${$('#firstname').val()} ${$('#last').val()}`,
+			email: $('#email').val(),
+			phone_number: $('#phone').val(),
+			message: $('#message').val()
+		};
+
+		emailjs.send('service_5ibjqp3', 'template_bhj2bbm', templateParams)
+		.then(function(response) {
+				console.log('SUCCESS!', response.status, response.text);
+				alert('Message sent successfully')
+		}, function(error) {
+			console.log('FAILED...', error);
+		});
 	})
 
 });
