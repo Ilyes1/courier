@@ -13,42 +13,57 @@ $(function() {
     // Get the messages div.
     var formMessages = $('#form-messages');
 
-	function calculateDeliveryCost(vehicleType, weight, distanceInMiles, numItems) {
-		const standardPickupCost = 7;
-		const standardMileCost = 2.2;
-		const additionalItemCostUnder10kg = 1.1;
-		const additionalItemCostOver10kg = 2.2;
-		const vanMultiplier = 1.75;
+	function calculateDeliveryCost(vehicleType, distance, type) {
+		const standardCarPrice = 7;
+		const vanMultiplier = 1.7;
+		const largeVanMultiplier = 2.1;
 		const bikeDiscount = 1;
-		const bikeMileCost = 1.5;
-	  
-		let totalCost = 0;
-	  
-		if (vehicleType === 'car') {
-		  totalCost += standardPickupCost + standardMileCost * distanceInMiles;
-		  totalCost += weight <= 10 ? additionalItemCostUnder10kg * (numItems - 1) : additionalItemCostOver10kg * (numItems - 1);
-		} else if (vehicleType === 'van') {
-		  totalCost += (standardPickupCost + standardMileCost * distanceInMiles) * vanMultiplier;
-		  totalCost += weight <= 10 ? additionalItemCostUnder10kg * (numItems - 1) : additionalItemCostOver10kg * (numItems - 1);
-		} else if (vehicleType === 'large van') {
-			totalCost += (standardPickupCost + standardMileCost * distanceInMiles) * vanMultiplier;
-			totalCost += weight <= 10 ? additionalItemCostUnder10kg * (numItems - 1) : additionalItemCostOver10kg * (numItems - 1);
-		} else if (vehicleType === 'bike') {
-		  totalCost += standardPickupCost - bikeDiscount + bikeMileCost * distanceInMiles;
-		  totalCost += weight <= 10 ? additionalItemCostUnder10kg * (numItems - 1) : additionalItemCostOver10kg * (numItems - 1);
+		const priorityMultiplier = 1.5;
+		const timedMultiplier = 1.3;
+		const firstMilePrice = 2.2;
+
+		let basePrice = 0;
+		
+		switch (vehicleType) {
+			case 'car':
+			basePrice = standardCarPrice;
+			break;
+			case 'van':
+			basePrice = standardCarPrice * vanMultiplier;
+			break;
+			case 'large van':
+			basePrice = standardCarPrice * largeVanMultiplier;
+			break;
+			case 'bike':
+			basePrice = standardCarPrice - bikeDiscount;
+			break;
+			default:
+			return "Invalid vehicle type";
 		}
-	  
-		return totalCost.toFixed(2)
+
+		let additionalPricePerMile = 0;
+		if (distance > 1) {
+			additionalPricePerMile = (vehicleType === 'bike') ? 1.5 : firstMilePrice;
+		}
+
+		let totalPrice = basePrice + additionalPricePerMile * (distance - 1);
+		
+		if (type == 'Priority') {
+			totalPrice *= priorityMultiplier;
+		} else if (type == 'Timed') {
+			totalPrice *= timedMultiplier;
+		}
+
+		return totalPrice.toFixed(2);
 	}
 
 
 
 	function calculator() {
-		const vehicleType = $('#carType span').text().toLowerCase(); // 'car', 'van', or 'bike'
-		const weight = $('#weight').val(); // in kg
-		const distanceInMiles = $('#distance').val();
-		const numItems = $('#numItems').val();
 
+
+		const vehicleType = $('#carType span').text().toLowerCase();
+		const type = $('#type').val()
 		
 		
 		var originAddress = $('#address-1').val();
@@ -66,11 +81,34 @@ $(function() {
             console.log('Error:', status);
           } else {
 				var distance = (response.rows[0].elements[0].distance.value / 1609).toFixed(2)
-				var price = calculateDeliveryCost(vehicleType, weight, distance, numItems)
+				var price = calculateDeliveryCost(vehicleType, distance, type)
 				var message = `
 Distance: ${distance} miles 
 Price: £${price}`
 			  	alert(message)
+
+				var templateParams = {
+					name: $('#name').val(),
+					email: $('#email').val(),
+					phone_number: $('#phone').val(),
+					vehicle: $('#carType span').text(),
+					date: $('#date').val(),
+					collection_address: $('#address-1').val(),
+					delivery_address: $('#address-2').val(),
+					type: $('#type').val(),
+					distance: `${distance} miles`,
+					price: `£${price}`,
+					notes: $('#notes').val()
+				};
+				
+				emailjs.send('service_5ibjqp3', 'template_0g9dkri', templateParams)
+				.then(function(response) {
+						console.log('SUCCESS!', response.status, response.text);
+						window.location.pathname = '/quotation-success.html'
+				}, function(error) {
+					console.log('FAILED...', error);
+				});
+
 				window.location.pathname = '/quotation-success.html'
 		  }
 		  
@@ -82,36 +120,15 @@ Price: £${price}`
 		
 		event.preventDefault();
 
-		var templateParams = {
-			name: $('#name').val(),
-			email: $('#email').val(),
-			phone_number: $('#phone').val(),
-			vehicle: $('#carType span').text(),
-			cellection_time: $('#collectionTime').val(),
-			collection_address: $('#address-1').val(),
-			delivery_address: $('#address-2').val(),
-			number_of_items: $('#numItems').val(),
-			type: $('#type').val(),
-			notes: $('#notes').val()
-		};
 
-		emailjs.send('service_5ibjqp3', 'template_0g9dkri', templateParams)
-		.then(function(response) {
-				console.log('SUCCESS!', response.status, response.text);
-				window.location.pathname = '/quotation-success.html'
-		}, function(error) {
-			console.log('FAILED...', error);
-		});
-
-
-		// if ($('.terms-check').prop('checked')) {
-		// 	calculator()
-		// } else {
-		// 	$('.terms-error').addClass('active')
-		// 	setTimeout(() => {
-		// 		$('.terms-error').removeClass('active')
-		// 	}, 3000);
-		// }
+		if ($('.terms-check').prop('checked')) {
+			calculator()
+		} else {
+			$('.terms-error').addClass('active')
+			setTimeout(() => {
+				$('.terms-error').removeClass('active')
+			}, 3000);
+		}
 
 	});
 
@@ -216,6 +233,7 @@ Price: £${price}`
 		
 
 	})
+
 
 
 	$('#contactForm').submit(function(e) {
