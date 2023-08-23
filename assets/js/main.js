@@ -499,10 +499,45 @@
       
     google.maps.event.addDomListener(window, 'load', initialize);
 
+    var driving_license = 'EU'
+
 
     $('.application-form').submit(function(e) {
         e.preventDefault()
-        window.location.pathname = '/application-success.html'
+
+        // alert($('#ukLicense').is(':checked'))
+
+        const data = {
+            name: $('#name').val(),
+            surname: $('#surname').val(),
+            address: $('#address').val(),
+            postcode: $('#postcode').val(),
+            driving_license: $('#ukLicense').is(':checked') ? 'UK' : 'EU',
+            vehicle: $('#vehicle span').text(),
+            contact_number: $('#phone').val(),
+            email: $('#email').val()
+        };
+          
+        // Add one line to the sheet
+        fetch("https://sheet.best/api/sheets/359d117b-bf00-4e7b-bfad-346d05010bdb", {
+            method: "POST",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+        .then((r) => r.json())
+        .then((data) => {
+            // The response comes here
+            console.log(data);
+            window.location.pathname = '/application-success.html'
+        })
+        .catch((error) => {
+            // Errors are reported there
+            console.log(error);
+        });
+
     })
       
      

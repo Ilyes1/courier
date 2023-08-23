@@ -207,7 +207,7 @@
             <div class="contact-section row mt-5 wow fade-in-bottom" data-wow-delay="200ms">
                 <div class="col-md-6 mt-4 d-flex align-items-center">
                     <div>
-                        <h4>Ready to Experience Excellence in Same-Day Deliveries?</h4>
+                        <h4 class="fw-bold">Ready to Experience Excellence in Same-Day Deliveries?</h4>
                         <p>
                             Join the ranks of our satisfied clients who have experienced the exceptional quality of Hire Ready Now's same-day courier service. Whether it's a stunning bouquet, delectable cuisine, crucial documents, or exclusive beverages, we're here to ensure your deliveries make a lasting impression. To book our service or learn more about how we can elevate your delivery experience, reach out to us today. Your prompt and reliable courier solution awaits – contact us now.
                         </p>
@@ -244,18 +244,23 @@
                             <form id="ajax_contact" class="form-horizontal" autocomplete="on">
                                 <div class="contact-form-group">
                                     <div class="form-field">
-                                        <input type="text" class="form-control" placeholder="Name" autocomplete="on" required>
+                                        <label>Name</label>
+                                        <input type="text" class="form-control" placeholder="Name" id="name" autocomplete="on" required>
+                                    </div>
+                                    <!-- <div class="form-field">
+                                        <label>Company Name</label>
+                                        <input type="text" class="form-control" placeholder="Company Name" id="companyName" required>
+                                    </div> -->
+                                    <div class="form-field">
+                                        <label>Email Address</label>
+                                        <input type="text" class="form-control" placeholder="Email Address" id="email" required>
                                     </div>
                                     <div class="form-field">
-                                        <input type="text" class="form-control" placeholder="Company Name" required>
-                                    </div>
-                                    <div class="form-field">
-                                        <input type="text" class="form-control" placeholder="Email Address" required>
-                                    </div>
-                                    <div class="form-field">
-                                        <input type="text" class="form-control" placeholder="Phone Number" required>
+                                        <label>Phone Number</label>
+                                        <input type="text" class="form-control" placeholder="Phone Number" id="phone" required>
                                     </div>
                                     <div class="form-field auto-field">
+                                        <label>Vehicle</label>
                                         <div class="form-control dropdown-btn" id="carType">
                                             <img src="./assets/icons/car.svg" alt="">
                                             <span>Car</span>
@@ -279,9 +284,9 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="form-field">
+                                    <!-- <div class="form-field">
+                                        <label>Number of items</label>
                                         <select class="form-select" id="numItems">
-                                            <option selected>Number of items</option>
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
@@ -293,18 +298,42 @@
                                             <option>9</option>
                                             <option>10</option>
                                         </select>
-                                    </div>
+                                    </div> -->
+                                    <!-- <div class="form-field">
+                                        <label>Weight</label>
+                                        <select id="weight" class="form-select">
+                                            <option>0 - 10kg</option>
+                                            <option>10 - 20kg</option>
+                                            <option>+20kg</option>
+                                        </select>
+                                    </div> -->
                                     <div class="form-field">
-                                        <input type="number" id="weight" class="form-control" placeholder="Weight (kg)" required>
+                                        <label>Delivery Type</label>
+                                        <select id="type" class="form-select">
+                                            <option>Standard</option>
+                                            <option>Priority</option>
+                                            <option>Timed</option>
+                                        </select>
                                     </div>
+                                    <!-- <div class="form-field">
+                                        <label>Collection Time</label>
+                                        <input type="datetime-local" id="collectionTime" class="form-control" required>
+                                    </div> -->
                                     <div class="form-field">
+                                        <label>Collection Address</label>
                                         <input type="text" class="form-control" id="address-1" placeholder="Collection Address" required>
                                     </div>
+                                    <!-- <div class="form-field">
+                                        <label>Delivery Time</label>
+                                        <input type="datetime-local" id="deliveryTime" class="form-control" required>
+                                    </div> -->
                                     <div class="form-field">
+                                        <label>Delivery Address</label>
                                         <input type="text" class="form-control" id="address-2" placeholder="Delivery Address" required>
                                     </div>
                                     <div class="form-field message">
-                                        <textarea cols="30" rows="4" class="form-control" placeholder="Notes"></textarea>
+                                        <label>Notes</label>
+                                        <textarea cols="30" rows="4" class="form-control" id="notes" placeholder="Notes"></textarea>
                                     </div>
                                     <div class="form-field wide form-check">
                                         <input class="form-check-input shadow-none terms-check mt-1" type="checkbox" value="" id="flexCheckDefault">
@@ -321,7 +350,6 @@
                                 </div>
                                 <div id="form-messages" class="alert" role="alert"></div>
                             </form>
-                              
 
                         </div>
                     </div>
@@ -364,7 +392,7 @@
                     <h3 class="widget-title">Get in touch</h3>
                     <a href="contact.html" class="contact-btn">Contact us</a>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=100087986455752" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://instagram.com/hirereadynow?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.linkedin.com/in/hire-ready-now-509675257" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                     </div>
