@@ -346,7 +346,8 @@ body.loaded {
 
 /* Default Btn */
 .default-btn {
-    background-color: var(--primary-color);
+    /* background-color: var(--primary-color); */
+    background-color: #3f537c;
     font-family: var(--primary-font);
     font-size: 20px;
     color: #fff;
@@ -412,6 +413,7 @@ body.loaded {
 .default-btn:hover {
     transform: translateY(-3px);
     color: #fff;
+    text-decoration: underline;
 }
 
 .btn-group {
