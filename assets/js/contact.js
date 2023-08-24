@@ -85,7 +85,6 @@ $(function() {
 				var message = `
 Distance: ${distance} miles 
 Price: £${price}`
-			  	alert(message)
 
 				var templateParams = {
 					name: $('#name').val(),
@@ -109,7 +108,7 @@ Price: £${price}`
 					console.log('FAILED...', error);
 				});
 
-				window.location.pathname = '/quotation-success.html'
+				// window.location.pathname = '/quotation-success.html'
 		  }
 		  
         });
