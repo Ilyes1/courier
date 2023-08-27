@@ -4,6 +4,9 @@
 (function ($) {
     "use strict";
 
+
+    emailjs.init('9m6ebWSpRECbzmqRy');
+
     // Preloader     
     $(window).on('load', function () {
         $('body').addClass('loaded');
@@ -528,31 +531,38 @@
             surname: $('#surname').val(),
             address: $('#address').val(),
             postcode: $('#postcode').val(),
-            driving_license: $('#ukLicense').is(':checked') ? 'UK' : 'EU',
+            license: $('#ukLicense').is(':checked') ? 'UK' : 'EU',
             vehicle: $('#vehicle span').text(),
-            contact_number: $('#phone').val(),
+            phone: $('#phone').val(),
             email: $('#email').val()
         };
+
+        emailjs.send('service_mcguz7k', 'template_ci7zx4l', data)
+		.then(function(response) {
+            window.location.pathname = '/application-success.html'
+		}, function(error) {
+			console.log('FAILED...', error);
+		});
           
         // Add one line to the sheet
-        fetch("https://sheet.best/api/sheets/359d117b-bf00-4e7b-bfad-346d05010bdb", {
-            method: "POST",
-            mode: "cors",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-        })
-        .then((r) => r.json())
-        .then((data) => {
-            // The response comes here
-            console.log(data);
-            window.location.pathname = '/application-success.html'
-        })
-        .catch((error) => {
-            // Errors are reported there
-            console.log(error);
-        });
+        // fetch("https://sheet.best/api/sheets/359d117b-bf00-4e7b-bfad-346d05010bdb", {
+        //     method: "POST",
+        //     mode: "cors",
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify(data),
+        // })
+        // .then((r) => r.json())
+        // .then((data) => {
+        //     // The response comes here
+        //     console.log(data);
+        //     window.location.pathname = '/application-success.html'
+        // })
+        // .catch((error) => {
+        //     // Errors are reported there
+        //     console.log(error);
+        // });
 
     })
       
