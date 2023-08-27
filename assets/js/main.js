@@ -518,7 +518,7 @@
 
     var driving_license = 'EU'
 
-    emailjs.init('9m6ebWSpRECbzmqRy');
+    
 
     $('.application-form').submit(function(e) {
         e.preventDefault()
