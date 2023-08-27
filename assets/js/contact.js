@@ -119,7 +119,6 @@ Price: £${price}`
 		
 		event.preventDefault();
 
-
 		if ($('.terms-check').prop('checked')) {
 			calculator()
 		} else {
@@ -133,7 +132,7 @@ Price: £${price}`
 
 
 	function calculateMultiDropCharge(numStops, totalDistanceMiles, vehicleType, itemsWeight, isWeekend, isPriorityBooking, isOutOfHours) {
-		const standardFirstMileCharge = 7;
+		const standardFirstMileCharge = 8.5;
 		const perMileCharge = 2.20;
 		const additionalItemCharge = 1.20;
 		const vanMultiplier = 1.75;

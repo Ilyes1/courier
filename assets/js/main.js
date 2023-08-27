@@ -486,15 +486,31 @@
     });
 
 
+    const today = new Date().toISOString().split('T')[0];
+    $('#date').attr('min', today)
+
+
     function initialize() {
         var address = document.getElementById('address')
         var collection = document.getElementById('address-1')
         var delivery = document.getElementById('address-2')
         var companyAddress = document.getElementById('companyAddress')
-        new google.maps.places.Autocomplete(address);
-        new google.maps.places.Autocomplete(collection);
-        new google.maps.places.Autocomplete(delivery);
-        new google.maps.places.Autocomplete(companyAddress);
+        new google.maps.places.Autocomplete(address, {
+            types: ['geocode'], // Only retrieve geographic coordinates
+            componentRestrictions: { country: 'gb' } // Restrict results to the United Kingdom (GB)
+          });
+        new google.maps.places.Autocomplete(collection, {
+            types: ['geocode'], // Only retrieve geographic coordinates
+            componentRestrictions: { country: 'gb' } // Restrict results to the United Kingdom (GB)
+          });
+        new google.maps.places.Autocomplete(delivery, {
+            types: ['geocode'], // Only retrieve geographic coordinates
+            componentRestrictions: { country: 'gb' } // Restrict results to the United Kingdom (GB)
+          });
+        new google.maps.places.Autocomplete(companyAddress, {
+            types: ['geocode'], // Only retrieve geographic coordinates
+            componentRestrictions: { country: 'gb' } // Restrict results to the United Kingdom (GB)
+          });
     }
       
     google.maps.event.addDomListener(window, 'load', initialize);
