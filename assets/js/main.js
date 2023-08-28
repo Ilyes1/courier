@@ -497,22 +497,30 @@
         var delivery = document.getElementById('address-2')
         var companyAddress = document.getElementById('companyAddress')
         new google.maps.places.Autocomplete(address, {
-            types: ['geocode'], // Only retrieve geographic coordinates
+            // types: ['geocode'], // Only retrieve geographic coordinates
             componentRestrictions: { country: 'gb' } // Restrict results to the United Kingdom (GB)
           });
         new google.maps.places.Autocomplete(collection, {
-            types: ['geocode'], // Only retrieve geographic coordinates
-            componentRestrictions: { country: 'gb' } // Restrict results to the United Kingdom (GB)
+            componentRestrictions: { country: 'gb' }
           });
         new google.maps.places.Autocomplete(delivery, {
-            types: ['geocode'], // Only retrieve geographic coordinates
+            // types: ['geocode'], // Only retrieve geographic coordinates
             componentRestrictions: { country: 'gb' } // Restrict results to the United Kingdom (GB)
           });
         new google.maps.places.Autocomplete(companyAddress, {
-            types: ['geocode'], // Only retrieve geographic coordinates
+            // types: ['geocode'], // Only retrieve geographic coordinates
             componentRestrictions: { country: 'gb' } // Restrict results to the United Kingdom (GB)
           });
+
+        //   auto1.addListener('place_changed', function () {
+        //     var selectedPlace = auto1.getPlace();
+          
+        //     // Extract and display the door number from the address components
+        //     var doorNumber = getDoorNumberFromAddressComponents(selectedPlace.address_components);
+        //     displayDoorNumber(doorNumber);
+        //   });
     }
+
       
     google.maps.event.addDomListener(window, 'load', initialize);
 
