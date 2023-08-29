@@ -66,8 +66,8 @@ $(function() {
 		const type = $('#type').val()
 		
 		
-		var originAddress = $('#address-1').val();
-		var destinationAddress = $('#address-2').val();
+		var originAddress = $('#c-postcode').val();
+		var destinationAddress = $('#d-postcode').val();
 		// const distance = calculateDistance(originAddress, destinationAddress);
 		var service = new google.maps.DistanceMatrixService();
         
