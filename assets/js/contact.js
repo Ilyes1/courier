@@ -14,7 +14,7 @@ $(function() {
     var formMessages = $('#form-messages');
 
 	function calculateDeliveryCost(vehicleType, distance, type) {
-		const standardCarPrice = 7;
+		const standardCarPrice = 8.5;
 		const vanMultiplier = 1.7;
 		const largeVanMultiplier = 2.1;
 		const bikeDiscount = 1;
