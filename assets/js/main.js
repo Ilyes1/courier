@@ -487,6 +487,7 @@
     });
 
 
+
     const today = new Date().toISOString().split('T')[0];
     $('#date').attr('min', today)
 
@@ -503,7 +504,7 @@
             componentRestrictions: { country: 'gb' } // Restrict results to the United Kingdom (GB)
           });
         new google.maps.places.Autocomplete(collection, {
-            componentRestrictions: { country: 'gb' }
+            componentRestrictions: { country: 'gb' },
           });
         new google.maps.places.Autocomplete(delivery, {
             // types: ['geocode'], // Only retrieve geographic coordinates
@@ -521,6 +522,7 @@
             // types: ['geocode'], // Only retrieve geographic coordinates
             componentRestrictions: { country: 'gb' } // Restrict results to the United Kingdom (GB)
           });
+
 
         //   auto1.addListener('place_changed', function () {
         //     var selectedPlace = auto1.getPlace();
@@ -582,6 +584,37 @@
     //     // });
 
     // })
+
+
+    $('#type').change(function() {
+        if ($('#type').val() == 'Standard') {
+
+            $('.auto-label h6 span').text('Standard delivery')
+            $('.auto-label p').text('Standard Delivery ensures your item is delivered within approximately 4 hours after pickup. It does not include a specific time window or priority treatment.')
+
+            $('.time-field').hide()
+
+        } else if ($('#type').val() == 'Timed') {
+
+            $('.auto-label h6 span').text('Timed delivery')
+            $('.auto-label p').text('Timed Delivery allows you to choose a specific delivery time slot for a slightly higher fee. Your item will be delivered within the chosen time frame.')
+
+            $('.time-field').show()
+
+        } else if ($('#type').val() == 'Priority') {
+
+            $('.auto-label h6 span').text('Priority delivery')
+            $('.auto-label p').text('Priority Delivery treats your item as a VIP, guaranteeing immediate and exclusive attention for delivery. While it comes at a higher rate compared to the other two options, it\'s beneficial if you need to send something urgently.')
+
+            $('.time-field').hide()
+
+        }
+        $('.auto-label').addClass('active')
+    })
+
+    $('.auto-label-close').click(function() {
+        $('.auto-label').removeClass('active')
+    })
       
      
 

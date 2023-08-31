@@ -92,9 +92,10 @@ Price: £${price}`
 					phone_number: $('#phone').val(),
 					vehicle: $('#carType span').text(),
 					date: $('#date').val(),
-					collection_address: $('#address-1').val(),
+					time: $('#time').val(),
+					collection_address: $('#c-house-number').val(),
 					collection_postcode: $('#c-postcode').val(),
-					delivery_address: $('#address-2').val(),
+					delivery_address: $('#d-house-number').val(),
 					delivery_postcode: $('#d-postcode').val(),
 					type: $('#type').val(),
 					distance: `${distance} miles`,
@@ -133,106 +134,7 @@ Price: £${price}`
 	});
 
 
-	function calculateMultiDropCharge(numStops, totalDistanceMiles, vehicleType, itemsWeight, isWeekend, isPriorityBooking, isOutOfHours) {
-		const standardFirstMileCharge = 8.5;
-		const perMileCharge = 2.20;
-		const additionalItemCharge = 1.20;
-		const vanMultiplier = 1.75;
-		const extraLargeVanMultiplier = 2.0;
-		const weightThreshold = 10;
-		const additionalWeightCharge = 5;
-		const bikeDiscount = 1;
-		const weekendSurcharge = 2;
-		const priorityBookingMultiplier = 0.75;
-		const outOfHoursChargeWeekday = 12.50;
-		const outOfHoursChargeWeekend = 15;
-	
-		let totalCharge = 0;
-	
-		if (vehicleType === 'van') {
-			totalCharge = (standardFirstMileCharge + (totalDistanceMiles - 1) * perMileCharge) * vanMultiplier;
-		} else if (vehicleType === 'large van') {
-			totalCharge = (standardFirstMileCharge + (totalDistanceMiles - 1) * perMileCharge) * extraLargeVanMultiplier;
-		} else {
-			totalCharge = (standardFirstMileCharge - bikeDiscount + (totalDistanceMiles - 1) * perMileCharge);
-		}
-	
-		if (itemsWeight > weightThreshold) {
-			totalCharge += (itemsWeight - weightThreshold) * additionalWeightCharge;
-		}
-	
-		totalCharge += (numStops - 1) * additionalItemCharge;
-	
-		if (isWeekend) {
-			totalCharge += weekendSurcharge;
-		}
-	
-		if (isPriorityBooking) {
-			totalCharge *= (1 + priorityBookingMultiplier);
-		}
-	
-		if (isOutOfHours) {
-			if (isWeekend) {
-				totalCharge += outOfHoursChargeWeekend;
-			} else {
-				totalCharge += outOfHoursChargeWeekday;
-			}
-		}
-	
-		return totalCharge;
-	}
 
-
-	$('#multiDropsForm').submit(function(e) {
-
-		e.preventDefault()
-
-		const vehicleType = $('#carType span').text().toLowerCase(); // 'car', 'van', or 'bike'
-		const weight = $('#weight').val(); // in kg
-		const distanceInMiles = $('#distance').val();
-		const numItems = $('#numItems').val();
-
-		const numStops = $('#numStops').val();
-		const isWeekend = $('#weekendCheck').prop('checked');
-		const isPriorityBooking = $('#priorityCheck').prop('checked');
-		const isOutOfHours = $('#outCheck').prop('checked');
-
-
-		if ($('.terms-check').prop('checked')) {
-			var originAddress = $('#address-1').val();
-			var destinationAddress = $('#address-2').val();
-			// const distance = calculateDistance(originAddress, destinationAddress);
-			var service = new google.maps.DistanceMatrixService();
-			
-			service.getDistanceMatrix({
-			  origins: [originAddress],
-			  destinations: [destinationAddress],
-			  travelMode: 'DRIVING',
-			  unitSystem: google.maps.UnitSystem.METRIC,
-			}, function(response, status) {
-			  if (status !== 'OK') {
-				console.log('Error:', status);
-			  } else {
-					var distance = (response.rows[0].elements[0].distance.value / 1609).toFixed(2)
-					var price = calculateMultiDropCharge(numStops, distance, vehicleType, weight, isWeekend, isPriorityBooking, isOutOfHours)
-					var message = `
-Distance: ${distance} miles 
-Price: £${price}`
-					alert(message)
-					window.location.pathname = '/quotation-success.html'
-			  }
-			  
-			});
-		} else {
-			$('.terms-error').addClass('active')
-			setTimeout(() => {
-				$('.terms-error').removeClass('active')
-			}, 3000);
-		}
-		
-		
-
-	})
 
 
 
