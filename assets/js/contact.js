@@ -14,48 +14,94 @@ $(function() {
     var formMessages = $('#form-messages');
 
 	function calculateDeliveryCost(vehicleType, distance, type) {
-		const standardCarPrice = 7;
-		const vanMultiplier = 1.7;
-		const largeVanMultiplier = 2.1;
-		const bikeDiscount = 1;
-		const priorityMultiplier = 1.5;
-		const timedMultiplier = 1.3;
-		const firstMilePrice = 2.2;
-
-		let basePrice = 0;
-		
+		const basePriceCar = 8.50;
+		const basePriceBike = basePriceCar - 1.00;
+		const mileagePriceCar = 2.20;
+		const mileagePriceBike = 1.50;
+		const priceMultiplierVan = 1.7;
+		const priceMultiplierLargeVan = 2.1;
+		const priceMultiplierPriority = 1.65;
+		const priceMultiplierTimed = 1.3;
+		const priceMultiplierWeekend = 1.5;
+		const priceMultiplierHoliday = 2.0;
+	
+		let price = 0;
+	
 		switch (vehicleType) {
 			case 'car':
-			basePrice = standardCarPrice;
-			break;
+				price = basePriceCar + (distance * mileagePriceCar);
+				break;
 			case 'van':
-			basePrice = standardCarPrice * vanMultiplier;
-			break;
+				price = (basePriceCar + (distance * mileagePriceCar)) * priceMultiplierVan;
+				break;
 			case 'large van':
-			basePrice = standardCarPrice * largeVanMultiplier;
-			break;
+				price = (basePriceCar + (distance * mileagePriceCar)) * priceMultiplierLargeVan;
+				break;
 			case 'bike':
-			basePrice = standardCarPrice - bikeDiscount;
-			break;
-			default:
-			return "Invalid vehicle type";
+				price = (basePriceBike + (distance * mileagePriceBike));
+				break;
 		}
+	
+		// if (isWeekend) {
+		// 	price *= priceMultiplierWeekend;
+		// }
+	
+		// if (isHoliday) {
+		// 	price *= priceMultiplierHoliday;
+		// }
 
-		let additionalPricePerMile = 0;
-		if (distance > 1) {
-			additionalPricePerMile = (vehicleType === 'bike') ? 1.5 : firstMilePrice;
-		}
-
-		let totalPrice = basePrice + additionalPricePerMile * (distance - 1);
-		
 		if (type == 'Priority') {
-			totalPrice *= priorityMultiplier;
+			price *= priceMultiplierPriority;
 		} else if (type == 'Timed') {
-			totalPrice *= timedMultiplier;
+			price *= priceMultiplierTimed;
 		}
-
-		return totalPrice.toFixed(2);
+	
+		return price.toFixed(2); // Round to 2 decimal places for currency
 	}
+
+	// function calculateDeliveryCost(vehicleType, distance, type) {
+	// 	const standardCarPrice = 7;
+	// 	const vanMultiplier = 1.7;
+	// 	const largeVanMultiplier = 2.1;
+	// 	const bikeDiscount = 1;
+	// 	const priorityMultiplier = 1.5;
+	// 	const timedMultiplier = 1.3;
+	// 	const firstMilePrice = 2.2;
+
+	// 	let basePrice = 0;
+		
+	// 	switch (vehicleType) {
+	// 		case 'car':
+	// 		basePrice = standardCarPrice;
+	// 		break;
+	// 		case 'van':
+	// 		basePrice = standardCarPrice * vanMultiplier;
+	// 		break;
+	// 		case 'large van':
+	// 		basePrice = standardCarPrice * largeVanMultiplier;
+	// 		break;
+	// 		case 'bike':
+	// 		basePrice = standardCarPrice - bikeDiscount;
+	// 		break;
+	// 		default:
+	// 		return "Invalid vehicle type";
+	// 	}
+
+	// 	let additionalPricePerMile = 0;
+	// 	if (distance > 1) {
+	// 		additionalPricePerMile = (vehicleType === 'bike') ? 1.5 : firstMilePrice;
+	// 	}
+
+	// 	let totalPrice = basePrice + additionalPricePerMile * (distance - 1);
+		
+	// 	if (type == 'Priority') {
+	// 		totalPrice *= priorityMultiplier;
+	// 	} else if (type == 'Timed') {
+	// 		totalPrice *= timedMultiplier;
+	// 	}
+
+	// 	return totalPrice.toFixed(2);
+	// }
 
 
 

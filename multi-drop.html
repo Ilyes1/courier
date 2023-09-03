@@ -146,7 +146,7 @@
                         <div class="service-feat-icon">
                             <img src="./assets/icons/check.svg" alt="">
                         </div>
-                        <h4>Tailored Solutions</h4>
+                        <h4 class="fw-bold">Tailored Solutions</h4>
                         <p>
                             We recognize that no two businesses are the same. Our solutions are meticulously tailored to your precise staffing needs, ensuring a seamless fit and optimal performance.
                         </p>
@@ -157,7 +157,7 @@
                         <div class="service-feat-icon">
                             <img src="./assets/icons/people.svg" alt="">
                         </div>
-                        <h4>Quality People</h4>
+                        <h4 class="fw-bold">Quality People</h4>
                         <p>
                             Our pool of candidates is handpicked based on their expertise, professionalism, and dedication. When you partner with us, you're gaining access to high-quality individuals who are ready to contribute their best to your team.
                         </p>
@@ -168,7 +168,7 @@
                         <div class="service-feat-icon">
                             <img src="./assets/icons/boxcheck.svg" alt="">
                         </div>
-                        <h4>Efficiency and Reliability</h4>
+                        <h4 class="fw-bold">Efficiency and Reliability</h4>
                         <p>
                             Multi-drop operations demand efficiency and reliability. With Hire Ready Now, you can rely on a consistent and dependable workforce that understands the importance of timely deliveries and exceptional service.
                         </p>
@@ -179,7 +179,7 @@
                         <div class="service-feat-icon">
                             <img src="./assets/icons/handshake.svg" alt="">
                         </div>
-                        <h4>Strategic Partnerships</h4>
+                        <h4 class="fw-bold">Strategic Partnerships</h4>
                         <p>
                             Our collaborations with Evri and Yodel further underscore our commitment to excellence. These partnerships empower us with cutting-edge resources and industry insights, enabling us to deliver unmatched multi-drop solutions.We recognize that no two businesses are the same. Our solutions are meticulously tailored to your precise staffing needs, ensuring a seamless fit and optimal performance.
                         </p>
@@ -214,145 +214,6 @@
     </section>
     <!--/.service-section-->
 
-    <section class="contact-section bd-bottom padding" id="onlineQuote">
-        <!-- <div class="map-pattern"></div> -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 m-auto">
-                    <div class="contact-details-wrap">
-                        <div class="section-heading text-center mb-30">
-                            <h4 class="sub-heading">Booking</h4>
-                            <h2>Get a Quote</h2>
-                            <p class="text-center">
-                                And if you're ready to take the next step, you can also request a free quote by filling in our online quotation form at the bottom of this page. Your personalized quote will be promptly emailed to you, providing you with all the information you need to make the best decision for your delivery needs.
-                            </p>
-                        </div>
-                        <div class="contact-form">
-                            <form id="ajax_contact" class="form-horizontal" autocomplete="on">
-                                <div class="contact-form-group">
-                                    <div class="form-field">
-                                        <label>Name</label>
-                                        <input type="text" class="form-control" placeholder="Name" id="name" autocomplete="on" required>
-                                    </div>
-                                    <!-- <div class="form-field">
-                                        <label>Company Name</label>
-                                        <input type="text" class="form-control" placeholder="Company Name" id="companyName" required>
-                                    </div> -->
-                                    <div class="form-field">
-                                        <label>Email Address</label>
-                                        <input type="text" class="form-control" placeholder="Email Address" id="email" required>
-                                    </div>
-                                    <div class="form-field">
-                                        <label>Phone Number</label>
-                                        <input type="text" class="form-control" placeholder="Phone Number" id="phone" required>
-                                    </div>
-                                    <div class="form-field auto-field">
-                                        <label>Vehicle</label>
-                                        <div class="form-control dropdown-btn" id="carType">
-                                            <img src="./assets/icons/car.svg" alt="">
-                                            <span>Car</span>
-                                        </div>
-                                        <ul class="autocomplete">
-                                            <li>
-                                                <img src="./assets/icons/car.svg" alt="">
-                                                <span>Car</span>
-                                            </li>
-                                            <li>
-                                                <img src="./assets/icons/van.svg" alt="">
-                                                <span>Van</span>
-                                            </li>
-                                            <li>
-                                                <img src="./assets/icons/largeVan.svg" alt="">
-                                                <span>Large Van</span>
-                                            </li>
-                                            <li>
-                                                <img src="./assets/icons/bike.svg" alt="">
-                                                <span>Bike</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- <div class="form-field">
-                                        <label>Number of items</label>
-                                        <select class="form-select" id="numItems">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                            <option>6</option>
-                                            <option>7</option>
-                                            <option>8</option>
-                                            <option>9</option>
-                                            <option>10</option>
-                                        </select>
-                                    </div> -->
-                                    <!-- <div class="form-field">
-                                        <label>Weight</label>
-                                        <select id="weight" class="form-select">
-                                            <option>0 - 10kg</option>
-                                            <option>10 - 20kg</option>
-                                            <option>+20kg</option>
-                                        </select>
-                                    </div> -->
-                                    <div class="form-field">
-                                        <label>Delivery Type</label>
-                                        <select id="type" class="form-select">
-                                            <option>Standard</option>
-                                            <option>Priority</option>
-                                            <option>Timed</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-field">
-                                        <label>Date</label>
-                                        <input type="date" id="date" class="form-control" required>
-                                    </div>
-                                    <div class="form-field">
-                                        <label>Collection Address</label>
-                                        <input type="text" class="form-control" id="address-1" placeholder="Collection Address" required>
-                                    </div>
-                                    <div class="form-field">
-                                        <label>Collection Postcode</label>
-                                        <input type="text" class="form-control" id="c-postcode" placeholder="Collection Postcode" required>
-                                    </div>
-                                    <!-- <div class="form-field">
-                                        <label>Delivery Time</label>
-                                        <input type="datetime-local" id="deliveryTime" class="form-control" required>
-                                    </div> -->
-                                    <div class="form-field">
-                                        <label>Delivery Address</label>
-                                        <input type="text" class="form-control" id="address-2" placeholder="Delivery Address" required>
-                                    </div>
-                                    <div class="form-field">
-                                        <label>Delivery Postcode</label>
-                                        <input type="text" class="form-control" id="d-postcode" placeholder="Delivery Postcode" required>
-                                    </div>
-                                    <div class="form-field message">
-                                        <label>Additional Infromation</label>
-                                        <textarea cols="30" rows="4" class="form-control" id="notes" placeholder="Additional Infromation"></textarea>
-                                    </div>
-                                    <div class="form-field wide form-check">
-                                        <input class="form-check-input shadow-none terms-check mt-1" type="checkbox" value="" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            By confirming your booking, you acknowledge that you have read, understood, and agreed to these <span class="text-blue" data-bs-toggle="modal" data-bs-target="#exampleModal"> Terms and Conditions</span>. If you do not agree with any part of these Terms, please do not proceed with your booking.
-                                        </label>
-                                    </div>
-                                    <div class="form-field wide">
-                                        <h6 class="terms-error text-danger">Please agree to the terms & conditions</h6>
-                                    </div>
-                                    <div class="form-field wide text-center">
-                                        <button id="submit" class="default-btn" type="submit">Submit</button>
-                                    </div>
-                                </div>
-                                <div id="form-messages" class="alert" role="alert"></div>
-                            </form>
-                              
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     
 
     
@@ -413,77 +274,7 @@
     <!--scrollup-->
 
 
-    <!-- MODAL -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-          <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-top">
-                    <h5>Terms & Conditions</h5>
-                    <img src="./assets/icons/close.svg" data-bs-dismiss="modal" alt="">
-                </div>
-            </div>
-            <div class="modal-body">
-              <p>
-                By proceeding with a quotation and booking our Service, you agree to be bound by these Terms. Please read them carefully before confirming your booking:
-              </p>
-              <h6 class="fw-bold">1. Quotation and Booking:</h6>
-              <p>
-                By accepting our quotation and proceeding with the booking, you acknowledge your commitment to using Hire Ready Now's same-day courier service and agree to the terms outlined herein.
-              </p>
-              <h6 class="fw-bold">2. Cancellation:</h6>
-              <p>
-                If you decide to cancel your booking, you must do so at least 30 minutes before the scheduled pick-up time. Failure to do so will result in a cancellation fee of 75% of the quoted amount.
-              </p>
-              <h6 class="fw-bold">3. Insurance:</h6>
-              <p>
-                <span class="text-dark fw-bold">a.</span> Hire Ready Now provides basic insurance coverage for items valued up to £20. For items valued between £20 and £100, you have the option to purchase additional insurance for a fee of £1. For items valued above £100, additional insurance can be obtained for a fee of £5
-                <br>
-                <span class="text-dark fw-bold">b.</span> In the event of a claim, you must provide documentation proving the value of the item before any payout is made.
-              </p>
-              <h6 class="fw-bold">4. Payment:</h6>
-              <p>
-                <span class="text-dark fw-bold">a.</span> Payment for the Service can be made via bank transfer or through a payment link sent to you. For regular deliveries, we can arrange weekly or bi-weekly payments upon request.
-                <br>
-                <span class="text-dark fw-bold">b.</span> A missed invoice or payment will result in a £50 charge.
-              </p>
-              <h6 class="fw-bold">5. Late Fees for Unprepared Items::</h6>
-              <p>
-                <span class="text-dark fw-bold">a.</span> Hire Ready Now allows a 10-minute grace period for the preparation of items for pick-up. If the items are not ready within this period, a late fee of £10 will be applied.
-                <br>
-                <span class="text-dark fw-bold">b.</span> After the initial 10-minute grace period, an additional fee of £1 per minute will be charged for every minute that the courier is required to wait for the items to be ready.
-              </p>
-              <h6 class="fw-bold">6. Liability:</h6>
-              <p>
-                <span class="text-dark fw-bold">a.</span> Hire Ready Now is not liable for any delays caused by factors beyond our control, such as traffic, adverse weather conditions, accidents, or unforeseen events.
-                <br>
-                <span class="text-dark fw-bold">b.</span> Hire Ready Now's liability for loss or damage to items is limited to the terms of the insurance coverage chosen by the customer.
-              </p>
-              <h6 class="fw-bold">7. Restricted Items:</h6>
-              <p>
-                Certain items, including but not limited to hazardous materials, illegal substances, and perishable goods, may not be transported using our Service. It is your responsibility to ensure that the items being transported are lawful and appropriate for our courier service.
-              </p>
-              <h6 class="fw-bold">8. Indemnification:</h6>
-              <p>
-                You agree to indemnify and hold Hire Ready Now, its employees, agents, and affiliates, harmless from any claims, damages, liabilities, and expenses arising out of or related to your use of our Service.
-              </p>
-              <h6 class="fw-bold">9. Privacy Policy:</h6>
-              <p>
-                Hire Ready Now collects and uses personal information as outlined in our Privacy Policy. By using our Service, you consent to the collection and use of your personal information in accordance with our Privacy Policy.
-              </p>
-              <h6 class="fw-bold">10. Governing Law and Jurisdiction:</h6>
-              <p>
-                These Terms and any disputes arising out of or in connection with them shall be governed by and construed in accordance with the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of London, United Kingdom.
-              </p>
-              <h6 class="fw-bold">11. Modification of Terms:</h6>
-              <p>
-                Hire Ready Now reserves the right to modify these Terms at any time. Changes will be effective upon posting on our website or notifying you directly.
-              </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    
 
     <!--jQuery Lib-->
     <script src="assets/js/vendor/jquary-3.6.0.min.js"></script>
