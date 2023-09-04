@@ -205,6 +205,31 @@ Price: £${price}`
 	})
 
 
+
+	$('.application-form').submit(function(e) {
+		e.preventDefault()
+
+		// alert($('#ukLicense').is(':checked'))
+
+		const data = {
+			name: $('#name').val(),
+			surname: $('#surname').val(),
+			address: $('#address').val(),
+			postcode: $('#postcode').val(),
+			license: $('#ukLicense').is(':checked') ? 'UK' : 'EU',
+			vehicle: $('#vehicle span').text(),
+			phone: $('#phone').val(),
+			email: $('#email').val()
+		};
+
+		emailjs.send('service_5ibjqp3', 'template_kfwsjyp', data)
+		.then(function(response) {
+			window.location.pathname = '/application-success.html'
+		}, function(error) {
+			console.log('FAILED...', error);
+		});
+
+	})
 	
 
 });

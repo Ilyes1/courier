@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="assets/css/swiper.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&v=3.exp&sensor=false&libraries=places"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPFWKqo7PvaPXkYif2TeEwAJe2_u84GnU&v=3.exp&sensor=false&libraries=places"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 </head>
@@ -262,58 +262,9 @@
     <script src="assets/js/vendor/smooth-scroll.js"></script>
     <script src="assets/js/vendor/chart.min.js"></script>
     <script src="assets/js/vendor/wow.min.js"></script>
-    <!-- <script src="assets/js/contact.js"></script> -->
+    <script src="assets/js/contact.js"></script>
     <script src="assets/js/main.js"></script>
 
-
-    <script>
-        emailjs.init('9m6ebWSpRECbzmqRy');
-        
-        $('.application-form').submit(function(e) {
-            e.preventDefault()
-
-            // alert($('#ukLicense').is(':checked'))
-
-            const data = {
-                name: $('#name').val(),
-                surname: $('#surname').val(),
-                address: $('#address').val(),
-                postcode: $('#postcode').val(),
-                license: $('#ukLicense').is(':checked') ? 'UK' : 'EU',
-                vehicle: $('#vehicle span').text(),
-                phone: $('#phone').val(),
-                email: $('#email').val()
-            };
-
-            emailjs.send('service_mcguz7k', 'template_ci7zx4l', data)
-            .then(function(response) {
-                window.location.pathname = '/application-success.html'
-            }, function(error) {
-                console.log('FAILED...', error);
-            });
-            
-            // Add one line to the sheet
-            // fetch("https://sheet.best/api/sheets/359d117b-bf00-4e7b-bfad-346d05010bdb", {
-            //     method: "POST",
-            //     mode: "cors",
-            //     headers: {
-            //         "Content-Type": "application/json",
-            //     },
-            //     body: JSON.stringify(data),
-            // })
-            // .then((r) => r.json())
-            // .then((data) => {
-            //     // The response comes here
-            //     console.log(data);
-            //     window.location.pathname = '/application-success.html'
-            // })
-            // .catch((error) => {
-            //     // Errors are reported there
-            //     console.log(error);
-            // });
-
-        })
-    </script>
 
 </body>
 
