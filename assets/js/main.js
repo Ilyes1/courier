@@ -615,6 +615,10 @@
     $('.auto-label-close').click(function() {
         $('.auto-label').removeClass('active')
     })
+    
+    $('.form-field').not(('.type-field')).click(function() {
+        $('.auto-label').removeClass('active')
+    })
 
     // function isTimeMoreThan30MinutesAhead(time1, time2) {
     //     // Parse the input times into Date objects
