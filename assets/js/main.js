@@ -597,14 +597,14 @@
         } else if ($('#type').val() == 'Timed') {
 
             $('.auto-label h6 span').text('Timed delivery')
-            $('.auto-label p').text('Scheduled pick-up and delivery before a specified time slot.')
+            $('.auto-label p').text('Timed Delivery allows you to choose a specific delivery time slot for a slightly higher fee. Your item will be delivered within the chosen time frame.')
 
             $('.time-field').show()
 
         } else if ($('#type').val() == 'Priority') {
 
             $('.auto-label h6 span').text('Priority delivery')
-            $('.auto-label p').text('Fastest service, item collected within 60 minutes, delivered ASAP.')
+            $('.auto-label p').text('While it comes at a higher rate compared to the other two options, it\'s beneficial if you need to send something urgently.')
 
             $('.time-field').hide()
 

@@ -202,20 +202,27 @@ Price: £${price}`
 		// 	}, 3000);
 		// }
 
-		if ($('.terms-check').prop('checked') && $('#type').val() !== 'Timed' || $('.terms-check').prop('checked') && $('#type').val() == 'Timed' && date1 <= date2) {
-			// calculator()
-			alert('ggos')
-		} else if ($('#type').val() == 'Timed' && date1 <= date2 !== true) {
-			$('.terms-error').text('Please select a delivery time that is at least 30 minutes later than the collection time.').addClass('active')
-			setTimeout(() => {
-				$('.terms-error').removeClass('active')
-			}, 3000);
-		} else if (!$('.terms-check').prop('checked')) {
-			$('.terms-error').text('Please agree to the terms & conditions').addClass('active')
-			setTimeout(() => {
-				$('.terms-error').removeClass('active')
-			}, 3000);
+		if($('#phone').val().length < 6) {
+				$('.terms-error').text('Please enter a valid phone number').addClass('active')
+				setTimeout(() => {
+					$('.terms-error').removeClass('active')
+				}, 3000);
+		} else {
+			if ($('.terms-check').prop('checked') && $('#type').val() !== 'Timed' || $('.terms-check').prop('checked') && $('#type').val() == 'Timed' && date1 <= date2) {
+				calculator()
+			} else if ($('#type').val() == 'Timed' && date1 <= date2 !== true) {
+				$('.terms-error').text('Please select a delivery time that is at least 30 minutes later than the collection time.').addClass('active')
+				setTimeout(() => {
+					$('.terms-error').removeClass('active')
+				}, 3000);
+			} else if (!$('.terms-check').prop('checked')) {
+				$('.terms-error').text('Please agree to the terms & conditions').addClass('active')
+				setTimeout(() => {
+					$('.terms-error').removeClass('active')
+				}, 3000);
+			}
 		}
+
 
 	});
 
