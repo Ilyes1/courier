@@ -615,6 +615,32 @@
     $('.auto-label-close').click(function() {
         $('.auto-label').removeClass('active')
     })
+
+    // function isTimeMoreThan30MinutesAhead(time1, time2) {
+    //     // Parse the input times into Date objects
+    //     const date1 = new Date(`2023-08-29T${time1}:00`);
+    //     const date2 = new Date(`2023-08-29T${time2}:00`);
+      
+    //     // Add 30 minutes (30 * 60 seconds) to date1
+    //     date1.setSeconds(date1.getSeconds() + 30 * 60);
+      
+    //     // Compare the two times
+    //     if (date1 < date2) {
+    //         ///
+    //     } else {
+    //         $('.terms-error').text('Please select a delivery time that is at least 30 minutes later than the collection time.').addClass('active')
+	// 		setTimeout(() => {
+	// 			$('.terms-error').removeClass('active')
+	// 		}, 3000);
+    //     }
+    //   }
+
+    // $('#d-time').change(function() {
+    //     // console.log($(this).val() > $('#c-time').val() + 1000 * 60 * 30)
+    //     var cTime = $('#c-time').val()
+    //     var dTime = $('#d-time').val()
+    //     isTimeMoreThan30MinutesAhead(cTime, dTime)
+    // })
       
      
 

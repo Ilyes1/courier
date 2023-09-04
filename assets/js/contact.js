@@ -13,6 +13,10 @@ $(function() {
     // Get the messages div.
     var formMessages = $('#form-messages');
 
+	// Get the current day
+	const currentDate = new Date();
+	const currentDay = currentDate.getDay();
+
 	function calculateDeliveryCost(vehicleType, distance, type) {
 		const basePriceCar = 8.50;
 		const basePriceBike = basePriceCar - 1.00;
@@ -42,9 +46,9 @@ $(function() {
 				break;
 		}
 	
-		// if (isWeekend) {
-		// 	price *= priceMultiplierWeekend;
-		// }
+		if (currentDay === 0 || currentDay === 6) {
+			price *= priceMultiplierWeekend;
+		}
 	
 		// if (isHoliday) {
 		// 	price *= priceMultiplierHoliday;
@@ -138,7 +142,8 @@ Price: £${price}`
 					phone_number: $('#phone').val(),
 					vehicle: $('#carType span').text(),
 					date: $('#date').val(),
-					time: $('#time').val(),
+					collection_time: $('#c-time').val(),
+					delivery_time: $('#d-time').val(),
 					collection_address: $('#c-house-number').val(),
 					collection_postcode: $('#c-postcode').val(),
 					delivery_address: $('#d-house-number').val(),
@@ -168,10 +173,45 @@ Price: £${price}`
 		
 		event.preventDefault();
 
-		if ($('.terms-check').prop('checked')) {
-			calculator()
-		} else {
-			$('.terms-error').addClass('active')
+		var cTime = $('#c-time').val()
+        var dTime = $('#d-time').val()
+		
+		// Parse the input times into Date objects
+		const date1 = new Date(`2023-08-29T${cTime}:00`);
+		const date2 = new Date(`2023-08-29T${dTime}:00`);
+		
+		// Add 30 minutes (30 * 60 seconds) to date1
+		date1.setSeconds(date1.getSeconds() + 30 * 60);
+		
+		// Compare the two times
+		// if (date1 < date2) {
+		// 	///
+		// } else {
+		// 	$('.terms-error').text('Please select a delivery time that is at least 30 minutes later than the collection time.').addClass('active')
+		// 	setTimeout(() => {
+		// 		$('.terms-error').removeClass('active')
+		// 	}, 3000);
+		// }
+
+		// if ($('.terms-check').prop('checked')) {
+		// 	// calculator()
+		// } else {
+		// 	$('.terms-error').text('Please agree to the terms & conditions').addClass('active')
+		// 	setTimeout(() => {
+		// 		$('.terms-error').removeClass('active')
+		// 	}, 3000);
+		// }
+
+		if ($('.terms-check').prop('checked') && $('#type').val() !== 'Timed' || $('.terms-check').prop('checked') && $('#type').val() == 'Timed' && date1 <= date2) {
+			// calculator()
+			alert('ggos')
+		} else if ($('#type').val() == 'Timed' && date1 <= date2 !== true) {
+			$('.terms-error').text('Please select a delivery time that is at least 30 minutes later than the collection time.').addClass('active')
+			setTimeout(() => {
+				$('.terms-error').removeClass('active')
+			}, 3000);
+		} else if (!$('.terms-check').prop('checked')) {
+			$('.terms-error').text('Please agree to the terms & conditions').addClass('active')
 			setTimeout(() => {
 				$('.terms-error').removeClass('active')
 			}, 3000);
