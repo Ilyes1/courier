@@ -257,7 +257,7 @@
                                     </div>
                                     <div class="form-field">
                                         <label>Phone Number</label>
-                                        <input type="text" class="form-control" placeholder="Phone Number" id="phone" required>
+                                        <input type="number" min="1000000" class="form-control" placeholder="Phone Number" id="phone" required>
                                     </div>
                                     <div class="form-field auto-field">
                                         <label>Vehicle</label>
@@ -307,37 +307,48 @@
                                             <option>+20kg</option>
                                         </select>
                                     </div> -->
-                                    <div class="form-field">
+                                    <div class="form-field" style="position: relative;">
                                         <label>Delivery Type</label>
                                         <select id="type" class="form-select">
                                             <option>Standard</option>
                                             <option>Priority</option>
                                             <option>Timed</option>
                                         </select>
+                                        <div class="auto-label">
+                                            <h6>
+                                                <span></span>
+                                                <img src="./assets/icons/close.svg" class="auto-label-close" alt="">
+                                            </h6>
+                                            <p></p>
+                                        </div>
+                                    </div>
+                                    <div class="form-field time-field">
+                                        <label>Time</label>
+                                        <input type="time" id="time" class="form-control">
                                     </div>
                                     <div class="form-field">
                                         <label>Date</label>
                                         <input type="date" id="date" class="form-control" required>
                                     </div>
                                     <div class="form-field">
-                                        <label>Collection Address</label>
-                                        <input type="text" class="form-control" id="address-1" placeholder="Collection Address" required>
-                                    </div>
-                                    <div class="form-field">
                                         <label>Collection Postcode</label>
                                         <input type="text" class="form-control" id="c-postcode" placeholder="Collection Postcode" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Collection Door Number / Building Business Name</label>
+                                        <input type="text" id="c-house-number" class="form-control" placeholder="Collection Address" required>
                                     </div>
                                     <!-- <div class="form-field">
                                         <label>Delivery Time</label>
                                         <input type="datetime-local" id="deliveryTime" class="form-control" required>
                                     </div> -->
                                     <div class="form-field">
-                                        <label>Delivery Address</label>
-                                        <input type="text" class="form-control" id="address-2" placeholder="Delivery Address" required>
-                                    </div>
-                                    <div class="form-field">
                                         <label>Delivery Postcode</label>
                                         <input type="text" class="form-control" id="d-postcode" placeholder="Delivery Postcode" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Delivery Door Number / Building Business Name</label>
+                                        <input type="text" id="d-house-number" class="form-control" placeholder="Delivery Address" required>
                                     </div>
                                     <div class="form-field message">
                                         <label>Additional Infromation</label>
