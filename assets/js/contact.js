@@ -235,7 +235,7 @@ Price: £${price}`
 		e.preventDefault()
 
 		var templateParams = {
-			name: `${$('#firstname').val()} ${$('#last').val()}`,
+			name: `${$('#firstname').val()} ${$('#lastname').val()}`,
 			email: $('#email').val(),
 			phone_number: $('#phone').val(),
 			message: $('#message').val()
