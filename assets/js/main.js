@@ -604,7 +604,7 @@
         } else if ($('#type').val() == 'Priority') {
 
             $('.auto-label h6 span').text('Priority delivery')
-            $('.auto-label p').text('While it comes at a higher rate compared to the other two options, it\'s beneficial if you need to send something urgently.')
+            $('.auto-label p').text('Fastest service, item collected within 60 minutes, delivered ASAP. While it comes at a higher rate compared to the other two options, it\'s beneficial if you need to send something urgently.')
 
             $('.time-field').hide()
 
